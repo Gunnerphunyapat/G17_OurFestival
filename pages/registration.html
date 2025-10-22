@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="register" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+    <title>Register</title>
+</head>
+<body>
+    <p class="m-3">Smoothei Shop</p>
+
+    <h1 class="m-3">REGISTER</h1>
+
+    <form> 
+        <div class="m-3">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="surname" class="form-label">Surame</label>
+                <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+            </div>
+            <div class="mb-2">
+                <label for="surname" class="form-label">Gender</label>
+            </div>
+            
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="male" id="male">
+                <label class="form-check-label" for="male">
+                    Male
+                </label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="female" id="female">
+                <label class="form-check-label" for="female">
+                    Female
+                </label>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="emailaddress" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailaddress" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-z]{2,}" placeholder="example@example.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phonenumber" class="form-label">Phone number</label>
+                <input type="tel" class="form-control" id="phonenumber"  pattern="[0-9]{10,10}" placeholder="xxx-xxxx-xxx" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+   
+
+    
+    
+</body>
+</html>
