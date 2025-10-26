@@ -81,3 +81,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+// localStorage.clear();  เอาไว้ล้าง ประวัติ feedback
