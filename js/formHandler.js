@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registerForm");
+    const form = document.getElementById("registerForm"); 
 
     if (form) {
         form.addEventListener("submit", function (e) {
             e.preventDefault();
-
 
             const name = document.getElementById("name").value.trim();
             const surname = document.getElementById("surname").value.trim();
@@ -12,14 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const email = document.getElementById("emailaddress").value.trim();
             const phone = document.getElementById("phonenumber").value.trim();
 
-
             if (!name || !surname || !gender || !email || !phone) {
                 alert("กรุณากรอกข้อมูลให้ครบทุกช่อง");
                 return;
             }
 
             const users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
-
 
             users.push({
                 name,
@@ -30,14 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 time: new Date().toLocaleString()
             });
 
-
             localStorage.setItem("registeredUsers", JSON.stringify(users));
 
-
-            window.location.href = "summary.html";
+            
+            window.location.href = "register_summary.html";
         });
     }
-
 
     const summaryDiv = document.getElementById("summaryList");
     if (summaryDiv) {
@@ -50,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <table class="table table-striped table-bordered mt-4">
           <thead class="table-dark">
             <tr>
-              <th>#</th>
+              <th>No.</th>
               <th>Name</th>
               <th>Surname</th>
               <th>Gender</th>
@@ -81,5 +76,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-
-// localStorage.clear();  เอาไว้ล้าง ประวัติ feedback

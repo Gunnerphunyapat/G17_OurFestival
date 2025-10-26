@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const feedbackForm = document.getElementById("feedbackForm");
 
-  // ✅ หน้าฟอร์ม feedback.html
+
   if (feedbackForm) {
     feedbackForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.getElementById("Feedback message").value.trim();
       const rating = document.getElementById("rating").value;
 
-      // ✅ บังคับ name + rating
+    
       if (!name || !rating) {
         alert("กรุณากรอกชื่อและเลือกคะแนนประเมิน");
         return;
       }
 
-      // ดึง feedback เก่า
+    
       const feedbacks = JSON.parse(localStorage.getItem("feedbackData")) || [];
 
-      // เพิ่ม feedback ใหม่
+      
       feedbacks.push({
         name,
         message: message || "(No feedback message)",
@@ -27,18 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
         time: new Date().toLocaleString(),
       });
 
-      // เก็บกลับเข้า localStorage
       localStorage.setItem("feedbackData", JSON.stringify(feedbacks));
 
       alert("บันทึกความคิดเห็นเรียบร้อยแล้ว!");
       feedbackForm.reset();
 
-      // ✅ ไปหน้า summary
+     
       window.location.href = "feedback_summary.html";
     });
   }
 
-  // ✅ หน้าสรุป feedback_summary.html
+  
   const summaryDiv = document.getElementById("feedbackSummary");
   if (summaryDiv) {
     const feedbacks = JSON.parse(localStorage.getItem("feedbackData")) || [];
@@ -60,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <table class="table table-striped table-bordered">
         <thead class="table-dark">
           <tr>
-            <th>#</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Message</th>
             <th>Rating</th>
