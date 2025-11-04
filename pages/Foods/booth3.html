@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>caocolow bakery</title>
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 20px;
+      color: #555;
+    }
+
+    .products {
+      text-align: center;
+    }
+
+    .products h2 {
+      color: #5a5a5a;
+      margin-bottom: 30px;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      width: 250px;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin: 15px 0 10px;
+      color: #8c7ae6; /* พาสเทลม่วง-ลาเวนเดอร์ */
+      font-size: 20px;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: #747d8c;
+    }
+
+    .price {
+      display: block;
+      font-weight: bold;
+      font-size: 18px;
+      color: #ff9ff3; /* พาสเทลชมพู */
+      margin: 10px 0;
+    }
+
+    .btn-buy {
+      background-color: #a4b0be; /* พาสเทลเทาอ่อน */
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: 16px;
+    }
+
+    .btn-buy:hover {
+      background-color: #8395a7; /* เทาเข้มขึ้นเล็กน้อย */
+    }
+
+    /* Responsive สำหรับมือถือ */
+    @media (max-width: 768px) {
+      .product-card {
+        width: 45%;
+      }
+    }
+    @media (max-width: 480px) {
+      .product-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="products">
+    <h2>🍪 Caocolow Bakery 🍪</h2>
+    <div class="product-list">
+
+      <!-- 1 -->
+      <div class="product-card">
+        <img src="path/to/softcookie-vanilla.jpg" alt="ซอฟคุกกี้วนิลา">
+        <h3>ซอฟคุกกี้วนิลา</h3>
+        <p>คุกกี้เนื้อนุ่ม หอมวนิลา ละลายในปาก</p>
+        <span class="price">฿35</span>
+        <button class="btn-buy">ซื้อเลย</button>
+      </div>
+
+      <!-- 2 -->
+      <div class="product-card">
+        <img src="path/to/matcha-cookie.jpg" alt="คุกกี้ชาเขียวมัทฉะ">
+        <h3>คุกกี้ชาเขียวมัทฉะ</h3>
+        <p>หอมมัทฉะเข้มข้น หวานน้อยกำลังดี</p>
+        <span class="price">฿35</span>
+        <button class="btn-buy">ซื้อเลย</button>
+      </div>
+
+      <!-- 3 -->
+      <div class="product-card">
+        <img src="path/to/oreo-cookie.jpg" alt="คุกกี้โอริโอ้">
+        <h3>คุกกี้โอริโอ้</h3>
+        <p>คุกกี้กรอบนุ่มผสมโอริโอ้ หอมอร่อย</p>
+        <span class="price">฿35</span>
+        <button class="btn-buy">ซื้อเลย</button>
+      </div>
+
+      <!-- 4 -->
+      <div class="product-card">
+        <img src="path/to/choco-strawberry-cookie.jpg" alt="คุกกี้ช็อกโกแลตสตรอเบอรี่">
+        <h3>คุกกี้ช็อกโกแลตสตรอเบอรี่</h3>
+        <p>รสช็อกโกแลตเข้มข้น ตัดกับสตรอเบอรี่สด</p>
+        <span class="price">฿50</span>
+        <button class="btn-buy">ซื้อเลย</button>
+      </div>
+
+      <!-- 5 -->
+      <div class="product-card">
+        <img src="path/to/strawberry-cheesecake.jpg" alt="ชีสเค้กสตรอเบอรี่">
+        <h3>ชีสเค้กสตรอเบอรี่</h3>
+        <p>ชีสเค้กเนื้อนุ่ม ราดซอสสตรอเบอรี่หอมหวาน</p>
+        <span class="price">฿60</span>
+        <button class="btn-buy">ซื้อเลย</button>
+      </div>
+
+      <!-- 6 -->
+      <div class="product-card">
+        <img src="path/to/chocolate-cake.jpg" alt="เค้กช็อกโกแลตหน้านิ่ม">
+        <h3>เค้กช็อกโกแลตหน้านิ่ม</h3>
+        <p>เค้กช็อกโกแลตเข้มข้น หน้านิ่มละมุนลิ้น</p>
+        <span class="price">฿50</span>
+        <button class="btn-buy">ซื้อเลย</button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
