@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booth 4: "Crafted by Heart" (Our Festival)</title>
+
+    <style>
+        /* ไว้เป็นไอเดียเฉยๆ */
+        body.handmade-theme {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFFBFD;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .booth-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .booth-intro {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px dashed #FADADD;
+        }
+
+        .booth-intro .booth-heading {
+            font-size: 2.5em;
+            color: #D988B9;
+            margin-bottom: 10px;
+        }
+
+        .booth-intro .booth-description {
+            font-size: 1.1em;
+            color: #777;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .section-heading {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 1.8em;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .item-card {
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(217, 136, 185, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #FADADD;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(217, 136, 185, 0.2);
+        }
+
+        .item-media {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+        }
+
+        .item-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .item-details {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .item-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .item-desc {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+
+        .item-price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #D988B9;
+            margin-bottom: 15px;
+        }
+
+        .add-to-cart-button {
+            background-color: #D988B9;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #B46A9B;
+        }
+
+        @media (max-width: 768px) {
+            .item-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .booth-intro .booth-heading {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .item-list {
+                grid-template-columns: 1fr;
+            }
+
+            .booth-intro .booth-heading {
+                font-size: 1.8em;
+            }
+
+            .item-details {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="booth-page handmade-theme">
+
+    <header class="main-header">
+        <div class="site-title">Our Festival | Crafted by Heart</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">หน้าแรก</a></li>
+                <li><a href="../linkshop.html">รายชื่อร้านค้า</a></li>
+                <li><a href="../registration.html">ลงทะเบียน</a></li>
+                <li><a href="../feedback.html">ประเมิน</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="booth-content">
+        <section class="booth-intro">
+            <h1 class="booth-heading">🎀 "Crafted by Heart" 🎀</h1>
+            <p class="booth-description">
+                เครื่องประดับ Handmade ดีไซน์น่ารักไม่ซ้ำใคร
+                ผสมผสานลูกปัด, ชาร์ม, และมุกในสไตล์ Y2K และ Coquette.
+            </p>
+        </section>
+
+        <section class="item-list">
+            <h2 class="section-heading">สินค้าแนะนำ (New Collection)</h2>
+
+            <article class="item-card item-star-necklace">
+                <div class="item-media">
+                    <img src="../../resources/booth/Home/booth4/necklace.jpg" alt="สร้อยคอดาวลูกปัดพาสเทล">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">1. สร้อยคอ "Pastel Dream"</h3>
+                    <p class="item-desc">สร้อยคอดาวสุดน่ารัก ร้อยด้วยมุกและลูกปัดคริสตัล ดีไซน์ไม่ซ้ำใคร</p>
+                    <p class="item-price">ราคา: <span>280 บาท</span></p>
+                    <button class="add-to-cart-button">เลือกซื้อ</button>
+                </div>
+            </article>
+
+            <article class="item-card item-beaded-ring">
+                <div class="item-media">
+                    <img src="../../resources/booth/Home/booth4/rings.jpg" alt="แหวนลูกปัดดอกไม้">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">2. แหวนลูกปัด "Daisy Ring"</h3>
+                    <p class="item-desc">แหวนลูกปัดร้อยเอ็นยืด สไตล์มินิมอล ลายดอกเดซี่และมุก</p>
+                    <p class="item-price">ราคา: <span>90 บาท</span></p>
+                    <button class="add-to-cart-button">เลือกซื้อ</button>
+                </div>
+            </article>
+
+            <article class="item-card item-phone-strap">
+                <div class="item-media">
+                    <img src="../../resources/booth/Home/booth4/keychain.jpg" alt="สายห้อยโทรศัพท์ธีมเมอร์เมด">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">3. สายห้อย "Mermaid Dream"</h3>
+                    <p class="item-desc">สายห้อยโทรศัพท์/พวงกุญแจ ธีมเมอร์เมด และท้องทะเล</p>
+                    <p class="item-price">ราคา: <span>200 บาท</span></p>
+                    <button class="add-to-cart-button">เลือกซื้อ</button>
+                </div>
+            </article>
+
+            <article class="item-card item-pearl-bracelet">
+                <div class="item-media">
+                    <img src="../../resources/booth/Home/booth4/bracelet.jpg" alt="สร้อยข้อมือมุกหัวใจและโบว์">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">4. สร้อยข้อมือ "Sweetheart Pearl"</h3>
+                    <p class="item-desc">สร้อยข้อมือมุก ร้อยสลับจี้หัวใจโปร่งและโบว์เงิน (มี 2 สี: เงิน, ทอง)</p>
+                    <p class="item-price">ราคา: <span>250 บาท</span></p>
+                    <button class="add-to-cart-button">เลือกซื้อ</button>
+                </div>
+            </article>
+
+            <article class="item-card item-hairclip">
+                <div class="item-media">
+                    <img src="../../resources/booth/Home/booth4/hair_clip.jpg" alt="กิ๊บติดผมดาวห้อยชาร์ม">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">5. กิ๊บติดผม "Star Charm"</h3>
+                    <p class="item-desc">กิ๊บติดผมรูปดาวสีเงิน พร้อมสายห้อยชาร์มลูกปัดสีชมพูสุดน่ารัก</p>
+                    <p class="item-price">ราคา: <span>180 บาท</span></p>
+                    <button class="add-to-cart-button">เลือกซื้อ</button>
+                </div>
+            </article>
+
+            <article class="item-card item-earrings">
+                <div class="item-media">
+                    <img src="../../resources/booth/Home/booth4/earrings.jpg" alt="ต่างหูดีไซน์ต่างๆ">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">6. ต่างหู "Starry Earrings"</h3>
+                    <p class="item-desc">ต่างหูห้อยหลากหลายสไตล์ ทั้งโบว์, ดาว และ กางเขน</p>
+                    <p class="item-price">ราคา: <span>เริ่มต้น 150 บาท</span></p>
+                    <button class="add-to-cart-button">ดูทั้งหมด</button>
+                </div>
+            </article>
+
+
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2568 Our Festival. Booth: Crafted by Heart.</p>
+    </footer>
+
+</body>
+
+</html>
