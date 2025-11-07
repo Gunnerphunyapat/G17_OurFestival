@@ -48,7 +48,35 @@ body{
     color: #4A423E;
 }
 
+.indexchoose{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
+    .indexfood{
+        width: 20vw;
+        height: 8vw;
+        font-size: 2vw;
+        text-align: center;
+        background-color: #A6B7DA;
+        color: #4A423E;
+        border-radius: 12px;
+        border: 1px solid #4A423E
+    }
+
+    .indexfasion{
+        width: 20vw;
+        height: 8vw;
+        font-size: 2vw;
+        text-align: center;
+        background-color: #A6B7DA;
+        color: #4A423E;
+        border-radius: 12px;
+        border: 1px solid #4A423E
+    }
+}
+
+/* end of css for index.html */
 
 
 .card {
