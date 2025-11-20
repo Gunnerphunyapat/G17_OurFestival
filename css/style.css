@@ -1,59 +1,59 @@
 @import url(https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Sofia&display=swap);
 
-body{
+body {
     background-color: #F7F6EB;
     width: 99%;
 }
 
 /* css for index.html */
-.logo{
+.logo {
     font-family: oleo script swash caps;
     color: #A6B7DA;
     font-size: 60px;
     text-shadow: -0.5px -0.5px 0 #422b23,
-                  0.5px -0.5px 0 #422b23,
-                 -0.5px  0.5px 0 #422b23,
-                  0.5px  0.5px 0 #422b23;
+        0.5px -0.5px 0 #422b23,
+        -0.5px 0.5px 0 #422b23,
+        0.5px 0.5px 0 #422b23;
     text-align: center;
     margin-top: -40px;
 }
 
-.nav-links{
+.nav-links {
     background-color: #B1CDAC;
     width: 100%;
     margin-top: -40px;
 
-    .indexbar1{
+    .indexbar1 {
         width: 25%;
         text-align: center;
     }
 
-    .indexbar2{
+    .indexbar2 {
         width: 25%;
         text-align: center;
     }
 
-    .indexbar3{
+    .indexbar3 {
         width: 25%;
         text-align: center;
     }
 
-    .indexbar4{
+    .indexbar4 {
         width: 25%;
         text-align: center;
     }
 }
 
-.nav-links a{
+.nav-links a {
     color: #4A423E;
 }
 
-.indexchoose{ 
+.indexchoose {
     width: 100%;
     display: flex;
     justify-content: center;
 
-    .indexfood{
+    .indexfood {
         width: 20vw;
         height: 8vw;
         font-size: 2vw;
@@ -64,7 +64,7 @@ body{
         border: 1px solid #4A423E
     }
 
-    .indexfasion{
+    .indexfasion {
         width: 20vw;
         height: 8vw;
         font-size: 2vw;
@@ -80,7 +80,7 @@ body{
 
 
 .card {
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
 .header-bar {
@@ -103,7 +103,7 @@ body{
 .logo-section img {
     width: 95px;
     height: auto;
-    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
 }
 
 .logo-text {
