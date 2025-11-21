@@ -1,15 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/member.css">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Radial Member Circles</title>
+  <link rel="stylesheet" href="../css/member.css" />
 </head>
 
 <body>
+  <!-- วงล้อใหญ่ -->
+  <div class="stage" id="stage" aria-live="polite">
+    <img src="../resources/member/Role.png" alt="wheel icon" class="center-img">
+    <div class="ring"></div>
 
+    <!-- สมาชิกในวง -->
+    <div class="node" data-name="Phunyapat Wongsatit" data-title="Project Manager"
+      data-bio="A supremely motivated young volleyballer with explosive jumping." style="--angle: -52deg;">
+      <div class="avatar"><img src="../resources/member/Phunyapat.png" style="object-position: 50% 20%;" alt="Phunyapat"></div>
+    </div>
+
+    <div class="node" data-name="Tsukishima Kei" data-title="Middle Blocker"
+      data-bio="Cool-headed and strategic blocker with a sharp eye." style="--angle: -16deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Tsukishima"></div>
+    </div>
+
+    <div class="node" data-name="Nishimiya Yuu" data-title="Libero"
+      data-bio="Dependable defense specialist with quick reads." style="--angle: 20deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Nishimiya"></div>
+    </div>
+
+    <div class="node" data-name="Kageyama Tobio" data-title="Setter" data-bio="A precise setter, controls game tempo."
+      style="--angle: 56deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Kageyama"></div>
+    </div>
+
+    <div class="node" data-name="Yamaguchi" data-title="Sub" data-bio="Reliable sub with improving technique."
+      style="--angle: 92deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Yamaguchi"></div>
+    </div>
+
+    <div class="node" data-name="Tanaka" data-title="Ace Support" data-bio="Energetic and loud; great spirit."
+      style="--angle: 128deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Tanaka"></div>
+    </div>
+
+    <div class="node" data-name="Tanaka" data-title="Ace Support" data-bio="Energetic and loud; great spirit."
+      style="--angle: 164deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Tanaka"></div>
+    </div>
+
+    <div class="node" data-name="Tanaka" data-title="Ace Support" data-bio="Energetic and loud; great spirit."
+      style="--angle: 200deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Tanaka"></div>
+    </div>
+
+    <div class="node" data-name="Tanaka" data-title="Ace Support" data-bio="Energetic and loud; great spirit."
+      style="--angle: 236deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Tanaka"></div>
+    </div>
+
+    <div class="node" data-name="Tanaka" data-title="Ace Support" data-bio="Energetic and loud; great spirit."
+      style="--angle: 272deg;">
+      <div class="avatar"><img src="../resources/member/Red.png" alt="Tanaka"></div>
+    </div>
+
+    <!-- วงล้อเล็กซ้ายบน (ตอนย่อ) -->
+    <button id="miniWheel" class="mini-wheel" aria-label="Open wheel" hidden>
+      <img src="../resources/member/Role.png" alt="wheel icon">
+    </button>
+
+  </div> <!-- ปิด stage -->
+
+  <!-- Popup มุมขวาล่าง (ย้ายออกมานอก stage) -->
+  <div id="memberPopup" class="member-popup hidden">
+    <img id="popupImg" src="" alt="">
+    <div class="popup-info">
+      <h3 id="popupName"></h3>
+      <p id="popupTitle"></p>
+      <p id="popupBio"></p>
+    </div>
+    <div id="popup" class="popup-hidden"></div>
+  </div>
+
+  <script src="../js/member.js"></script>
 </body>
 
 </html>
