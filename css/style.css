@@ -5,7 +5,6 @@ body {
     width: 99%;
 }
 
-/* css for index.html */
 .logo {
     font-family: oleo script swash caps;
     color: #A6B7DA;
@@ -76,4 +75,243 @@ body {
     }
 }
 
-/* end of css for index.html */
+body {
+    margin: 0;
+    font-family: "Kanit", sans-serif;
+    background-color: #F7F6EB;
+}
+
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: rgba(247, 246, 235, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(74, 66, 62, 0.08);
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 16px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.logo p {
+    margin: 0;
+    text-align: center;
+    font-family: "Oleo Script Swash Caps", cursive;
+    font-size: 50px;
+    color: #A6B7DA;
+    text-shadow: -0.5px -0.5px 0 #422b23,
+                  0.5px -0.5px 0 #422b23,
+                 -0.5px  0.5px 0 #422b23,
+                  0.5px  0.5px 0 #422b23;
+}
+
+.nav-links {
+    width: 100%;
+    background-color: #B1CDAC;
+    border-radius: 999px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    margin-top: 4px;
+}
+
+.nav-links td {
+    width: 25%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav-links a {
+    display: block;
+    text-decoration: none;
+    font-family: "Kanit", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #4A423E;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.55);
+    transform: translateY(-1px);
+}
+
+
+.indexchoose {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+}
+
+.indexchoose table {
+    border-spacing: 18px;
+    margin: 0 auto;
+}
+
+.indexfood,
+.indexfasion {
+    width: 18vw;
+    min-width: 170px;
+    height: 7vw;
+    min-height: 60px;
+    font-size: 1.6vw;
+    min-font-size: 16px;
+    text-align: center;
+    background: linear-gradient(135deg, #A6B7DA, #c2ceec);
+    color: #4A423E;
+    border-radius: 18px;
+    border: 1px solid #4A423E;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.indexfood:hover,
+.indexfasion:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.18);
+    filter: brightness(1.03);
+}
+
+
+.hero {
+    max-width: 1100px;
+    margin: 24px auto 40px;
+    padding: 0 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-inner {
+    background: linear-gradient(135deg, #B1CDAC, #A6B7DA);
+    border-radius: 28px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.16);
+    position: relative;
+}
+
+
+.hero-img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+}
+
+.shop-title {
+    position: absolute;
+    right: 40px;
+    bottom: 32px;
+    margin: 0;
+    font-family: "Great Vibes", cursive;
+    font-size: 3.4rem;
+    color: #ffffff;
+    text-shadow: 0 5px 12px rgba(0,0,0,0.6);
+}
+
+
+.hero {
+    position: relative;
+}
+.shop-title {
+
+}
+
+
+
+footer {
+    margin-top: 30px;
+    background-color: #E1E7D4;
+    text-align: center;
+    padding: 14px 10px 22px;
+    font-size: 0.85rem;
+    color: #4A423E;
+    border-top: 1px solid rgba(74,66,62,0.12);
+}
+
+
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo p {
+        font-size: 40px;
+    }
+
+    .nav-links {
+        border-radius: 20px;
+    }
+
+    .nav-links td {
+        padding: 8px 0;
+    }
+
+    .shop-title {
+        right: 24px;
+        bottom: 24px;
+        font-size: 2.6rem;
+    }
+
+    .indexfood,
+    .indexfasion {
+        width: 36vw;
+        height: 14vw;
+        font-size: 3.2vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo p {
+        font-size: 32px;
+    }
+
+    .navbar {
+        gap: 4px;
+    }
+
+    .nav-links td {
+        width: auto;
+        font-size: 0.8rem;
+    }
+
+    .indexchoose {
+        margin-top: 20px;
+    }
+
+    .indexchoose table {
+        border-spacing: 12px;
+    }
+
+    .indexfood,
+    .indexfasion {
+        width: 42vw;
+        height: 16vw;
+        font-size: 3.8vw;
+        border-radius: 14px;
+    }
+
+    .shop-title {
+        right: 18px;
+        bottom: 18px;
+        font-size: 2.1rem;
+        text-align: right;
+    }
+}
