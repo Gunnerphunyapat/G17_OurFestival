@@ -1,0 +1,258 @@
+:root {
+    --stage-size: 720px;
+    --member-size: 150px;
+    --radius: 390px;
+    --bg: #0b0b0b;
+    --mini-size: 120px;
+    --mini-radius: 55px;
+    --anim-fast: .45s ease;
+    --anim-slow: 0.3s cubic-bezier(.22, 1, .36, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-image: url('../resources/member/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Inter, system-ui;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* ------------------------------- */
+/* วงล้อใหญ่ */
+.stage {
+    position: relative;
+    width: var(--stage-size);
+    height: var(--stage-size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: width var(--anim-slow), height var(--anim-slow), transform var(--anim-slow);
+    transform-origin: center;
+}
+
+/* วงเส้นประรอบ stage */
+.stage .ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, .15);
+    z-index: 0;
+
+}
+
+
+
+/* รูปกลางตรงกลางวง ขนาดคงที่ ไม่ย่อ */
+.stage>img.center-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, .25);
+    pointer-events: none;
+    z-index: 1;
+    transition: width var(--anim-slow), height var(--anim-slow);
+    /* <-- เพิ่มตรงนี้ */
+}
+
+/* โหมดย่อไปมุมซ้ายบน */
+.stage.compact {
+    width: var(--mini-size);
+    height: var(--mini-size);
+
+    position: absolute; /* เดิม relative → absolute จะอนิเมตได้ */
+    
+    transform:
+        translate(-45vw, -40vh)    /* ตำแหน่งไปซ้ายบน */
+        scale(.35);                /* ย่อ */
+    
+    opacity: .9;
+    cursor: pointer;
+}
+
+.stage.compact>img.center-img {
+    width: 100%;
+    /* ขนาดเท่าเดิม */
+    height: 100%;
+    /* ขนาดเท่าเดิม */
+}
+
+/* เส้นประยังอยู่แม้ย่อ */
+.stage.compact .ring {
+    border-width: 2px;
+    /* ปรับได้ */
+}
+
+.stage.compact::before {
+    content: '';
+    position: absolute;
+    top: -210px;
+    left: -210px;
+    right: -210px;
+    bottom: -210px;
+    pointer-events: auto;
+}
+
+/* node รอบวง */
+.node {
+    --angle: 0deg;
+    position: absolute;
+    width: var(--member-size);
+    height: var(--member-size);
+    border-radius: 50%;
+    transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1*var(--angle)));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--anim-slow), opacity var(--anim-fast);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.node .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, .25);
+}
+
+.node .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* หรือ contain ตามชอบ */
+    object-position: center top; /* จัดตำแหน่งภาพ */
+    display: block;
+}
+
+/* Hover effect ขยาย node */
+.node:hover {
+    transform: rotate(var(--angle)) translate(calc(var(--radius) + 20px)) rotate(calc(-1*var(--angle))) scale(1.5);
+}
+
+/* node และ center card ไม่ขวาง pointer ตอน compact */
+.stage.compact .node,
+.stage.compact #centerCard {
+    pointer-events: none;
+}
+
+/* mini wheel */
+.mini-wheel {
+    border: 3px solid rgba(255, 255, 255, .25);
+    background: var(--bg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.mini-wheel.show {
+    opacity: 1;
+}
+
+/* ----- POPUP ด้านขวาล่าง ----- */
+body > .member-popup {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);  /* เริ่มจากล่าง */
+    transition: transform 0.5s cubic-bezier(.22,1,.36,1), opacity 0.5s cubic-bezier(.22,1,.36,1);
+    background: transparent;
+    z-index: 9999;
+}
+
+/* รูปใน popup */
+.member-popup img {
+    width: 100%;
+    height: 700px;
+    border-radius: 0; /* เอา 50% ออก */
+    border: none;     /* ถ้าไม่ต้องการเส้นขอบ */
+    object-fit: cover; /* หรือ contain ตามต้องการ */
+}
+
+/* ข้อความ */
+.popup-info h3,
+.popup-info p {
+    margin: 0;
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* แสดง popup สไลด์ขึ้น */
+.member-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* ซ่อน popup สไลด์ลง */
+.member-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(40px) scale(0.9);
+}
+
+
+body > #memberPopup {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+}
+
+#popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 260px;
+  padding: 16px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: .35s ease;
+}
+
+#popup.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.popup-hidden {
+  display: none;
+}
+
+
+#stage.expand-back {
+  transition: transform 0.3s ease;
+}
+
