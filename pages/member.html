@@ -15,12 +15,23 @@
     <div class="ring"></div>
 
     <!-- สมาชิกในวง -->
-    <div class="node" data-name="Phunyapat Wongsatit" data-title="Project Manager"
-      data-bio="A supremely motivated young volleyballer with explosive jumping." style="--angle: -52deg;">
-      <div class="avatar"><img src="../resources/member/Phunyapat.png" style="object-position: 50% 20%;" alt="Phunyapat"></div>
-    </div>
 
-    <div class="node" data-name="Tsukishima Kei" data-title="Middle Blocker"
+    <div class="node" 
+     data-info-name="6809650598 นาย ปุญญพัฒน์  วงศ์สถิตย์"
+     data-info-title="วิทยาการคอมพิวเตอร์ (ภาคพิเศษ)"
+     data-info-bio="มหาวิทยาลัยธรรมศาสตร์ Thammasat University"
+     data-info-img="../resources/member/Phunyapat.png"
+     data-name="Phunyapat"
+     data-surname="Wongsatit"
+     data-title="Project Manager"
+     data-bio="A supremely motivated young volleyballer with explosive jumping.
+     A supremely motivated young volleyballer with explosive jumping."
+     data-rolepic= "../resources/member/PM.png"
+     style="--angle: -52deg;">
+  <div class="avatar"><img src="../resources/member/Phunyapat.png" style="object-position: 50% 20%;" alt="Phunyapat"></div>
+</div>
+
+    <div class="node" data-name="GGGGGGGGG" data-title="Middle Blocker"
       data-bio="Cool-headed and strategic blocker with a sharp eye." style="--angle: -16deg;">
       <div class="avatar"><img src="../resources/member/Red.png" alt="Tsukishima"></div>
     </div>
@@ -72,6 +83,8 @@
 
   </div> <!-- ปิด stage -->
 
+  <div id="overlay"></div>
+
   <!-- Popup มุมขวาล่าง (ย้ายออกมานอก stage) -->
   <div id="memberPopup" class="member-popup hidden">
     <img id="popupImg" src="" alt="">
@@ -82,6 +95,25 @@
     </div>
     <div id="popup" class="popup-hidden"></div>
   </div>
+
+  <!-- Popup ชื่อ -->
+<div id="popupNameBox" class="popup-single hidden"></div>
+
+<!-- Popup นามสกุล -->
+<div id="popupSurnameBox" class="popup-single hidden"></div>
+
+<!-- Popup ตำแหน่ง -->
+<div id="popupRoleBox" class="popup-single hidden"></div>
+
+<!-- Popup ข้อมูล -->
+<div id="popupDataBox" class="popup-single hidden"></div>
+
+<!-- Popup รูปบทบาท-->
+<div id="popupImgBox" class="popup-single hidden">
+  <img id="popupImgRole" src="" alt="Role Picture">
+</div>
+
+
 
   <script src="../js/member.js"></script>
 </body>
