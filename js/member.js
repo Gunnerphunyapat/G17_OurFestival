@@ -4,14 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const miniWheel = document.getElementById("miniWheel");
     const nodes = document.querySelectorAll(".node");
 
-    // popup หลัก (มุมขวาล่าง)
     const popup = document.getElementById("memberPopup");
     const popupImg = document.getElementById("popupImg");
     const popupName = document.getElementById("popupName");
     const popupTitle = document.getElementById("popupTitle");
     const popupBio = document.getElementById("popupBio");
 
-    // popup 
     const popupNameBox = document.getElementById("popupNameBox");
     const popupSurnameBox = document.getElementById("popupSurnameBox");
     const popupRoleBox = document.getElementById("popupRoleBox");
@@ -19,45 +17,50 @@ document.addEventListener("DOMContentLoaded", () => {
     const popupImgBox = document.getElementById("popupImgBox");
     const popupImgRole = document.getElementById("popupImgRole");
 
-    // overlay
     const overlay = document.getElementById("overlay");
 
-    // --------------------------------------------------
-    // ฟังก์ชันซ่อน popup ทั้งหมด
-    // --------------------------------------------------
+    let activeNode = null;
+
     function hideAllPopups() {
         [popupNameBox, popupSurnameBox, popupRoleBox, popupDataBox, popupImgBox].forEach(p => {
             p.classList.remove("show");
             p.classList.add("hidden");
         });
-
         popup.classList.remove("show");
         popup.classList.add("hidden");
-
         overlay.style.opacity = "0";
         overlay.style.pointerEvents = "none";
     }
 
-    // --------------------------------------------------
-    // แสดง popup 5 ตัว (จาก node)
-    // --------------------------------------------------
     function showNodePopups(node) {
         popupNameBox.textContent = node.dataset.name || '';
-        popupSurnameBox.textContent = node.dataset.surname || ''; 
+        popupSurnameBox.textContent = node.dataset.surname || '';
         popupRoleBox.textContent = node.dataset.title || '';
         popupDataBox.textContent = node.dataset.bio || '';
         popupImgRole.src = node.dataset.rolepic || node.querySelector("img").src;
 
-        [popupNameBox, popupSurnameBox, popupRoleBox, popupDataBox, popupImgBox].forEach(p => { // <-- เพิ่ม popupSurnameBox
+        popupRoleBox.className = "popup-single show";
+
+    // เพิ่ม class ตามตำแหน่งบทบาท
+    switch(node.dataset.title) {
+        case 'Project Manager': popupRoleBox.classList.add('role-PM'); break;
+        case 'Product Owner':   popupRoleBox.classList.add('role-PO'); break;
+        case 'Team Lead':       popupRoleBox.classList.add('role-TL'); break;
+        case 'QA Team':         popupRoleBox.classList.add('role-QA'); break;
+        case 'Scrum Master':    popupRoleBox.classList.add('role-SM'); break;
+        case 'Developer':       popupRoleBox.classList.add('role-DEV'); break;
+        case 'Soft. Architect': popupRoleBox.classList.add('role-SA'); break;
+        case 'UX/UI Designer':  popupRoleBox.classList.add('role-UXUI'); break;
+        case 'Testers':         popupRoleBox.classList.add('role-TESTER'); break;
+        case 'Bus. Analyst':    popupRoleBox.classList.add('role-BA'); break;
+    }
+
+        [popupNameBox, popupSurnameBox, popupRoleBox, popupDataBox, popupImgBox].forEach(p => {
             p.classList.remove("hidden");
             p.classList.add("show");
         });
     }
 
-    // --------------------------------------------------
-    // แสดง member-popup (มุมขวาล่าง) จาก node
-    // ใช้ data-info-* ของ node
-    // --------------------------------------------------
     function showPopupInfoFromNode(node) {
         popupImg.src = node.dataset.infoImg || '';
         popupName.textContent = node.dataset.infoName || '';
@@ -71,68 +74,41 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.style.pointerEvents = "auto";
     }
 
-    // --------------------------------------------------
-    // คลิก node → ย่อวงล้อ + แสดง popup ทั้งหมด
-    // --------------------------------------------------
     nodes.forEach(node => {
         node.addEventListener("click", e => {
             e.stopPropagation();
+            if (activeNode) activeNode.classList.remove("active");
+            node.classList.add("active");
+            activeNode = node;
 
             stage.classList.add("compact");
             miniWheel.classList.add("show");
 
-            // 4 popup จาก node
             showNodePopups(node);
-
-            // popup-info แยกตาม node
             showPopupInfoFromNode(node);
         });
     });
 
-    // --------------------------------------------------
-    // คลิก overlay → ปิด popup + ขยายวงล้อกลับ
-    // --------------------------------------------------
     overlay.addEventListener("click", () => {
-        hideAllPopups();
         expandStage();
     });
 
-    // --------------------------------------------------
-    // popup ถูกคลิก → ซ่อน popup ทั้งหมด
-    // --------------------------------------------------
-    popup.addEventListener("click", hideAllPopups);
-    [popupNameBox, popupSurnameBox, popupRoleBox, popupDataBox, popupImgBox].forEach(p => { // <-- เพิ่ม popupSurnameBox
-        p.addEventListener("click", hideAllPopups);
+    popup.addEventListener("click", () => expandStage());
+    [popupNameBox, popupSurnameBox, popupRoleBox, popupDataBox, popupImgBox].forEach(p => {
+        p.addEventListener("click", () => expandStage());
     });
 
-    // --------------------------------------------------
-    // คลิกวงเล็กหรือ stage → ขยายกลับ
-    // --------------------------------------------------
     function expandStage() {
         if (stage.classList.contains("compact")) {
             hideAllPopups();
-
+            if (activeNode) { activeNode.classList.remove("active"); activeNode = null; }
             stage.classList.add("expand-back");
             stage.classList.remove("compact");
-
-            setTimeout(() => {
-                stage.classList.remove("expand-back");
-                miniWheel.classList.remove("show");
-            }, 300);
+            setTimeout(() => { stage.classList.remove("expand-back"); miniWheel.classList.remove("show"); }, 300);
         }
     }
 
-    stage.addEventListener("click", () => {
-        if (stage.classList.contains("compact")) expandStage();
-    });
-
-    miniWheel.addEventListener("click", e => {
-        e.stopPropagation();
-        if (stage.classList.contains("compact")) expandStage();
-    });
-
-
-    
+    stage.addEventListener("click", () => { if (stage.classList.contains("compact")) expandStage(); });
+    miniWheel.addEventListener("click", e => { e.stopPropagation(); if (stage.classList.contains("compact")) expandStage(); });
 
 });
-
