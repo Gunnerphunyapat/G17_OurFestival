@@ -1,15 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/linkshop.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>รายชื่อร้านค้า | Thammasat Fair</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/linkshop.css">
 </head>
-
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="../index.html" class="logo">Thammasat Fair</a>
+      <nav class="nav-links">
+        <a href="../index.html">หน้าแรก</a>
+        <a href="member.html">สมาชิกทีม</a>
+        <a href="feedback.html">รีวิว</a>
+        <a class="btn" href="registration.html">เข้าสู่ระบบ</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- Page title -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>รายชื่อร้านค้า (Booth Directory)</h1>
+      <p>ค้นหา/กรองร้านค้าที่สนใจได้เลย</p>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section class="controls">
+    <div class="container controls-row">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="ค้นหาชื่อร้าน / เมนู / คำอธิบาย…" aria-label="ค้นหาร้านค้า">
+      </div>
+      <div class="filters" role="tablist" aria-label="Filter categories">
+        <button class="filter-btn is-active" data-filter="all">ทั้งหมด</button>
+        <button class="filter-btn" data-filter="food">Food & Drinks</button>
+        <button class="filter-btn" data-filter="home">Home & Fashion</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <main class="container">
+    <div id="boothGrid" class="grid">
+
+      <!-- FOOD 1 -->
+      <article class="card" data-category="food">
+        <div class="thumb">
+          <img src="../resources/booth/Foods/booth1/banner.jpg" alt="Cream Cheese Mochi banner">
+          <span class="badge">FOOD</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cream Cheese Mochi</h3>
+          <p class="card-text">โมจิหนึบไส้ครีมชีสโฮมเมด 3 รส + ท็อปปิ้งผลไม้</p>
+          <div class="card-actions">
+            <a class="btn" href="Foods/booth1.html">ดูร้าน</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FOOD 2 -->
+      <article class="card" data-category="food">
+        <div class="thumb">
+          <img src="../resources/booth/Foods/booth2/Strawberry.jpg" alt="Drinks Stall strawberry yogurt">
+          <span class="badge">FOOD</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Drinks Stall</h3>
+          <p class="card-text">สมูทตี้/โซดา ปรับความหวานได้ เพิ่มท็อปปิ้งได้</p>
+          <div class="card-actions">
+            <a class="btn" href="Foods/booth2.html">ดูร้าน</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- FOOD 3 -->
+      <article class="card" data-category="food">
+        <div class="thumb">
+          <img src="../resources/booth/Foods/booth3/banner.png" alt="Caocolow Bakery banner">
+          <span class="badge">FOOD</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Caocolow Bakery</h3>
+          <p class="card-text">คุกกี้/เค้กอบสด หอมหวานกำลังดี ไส้แน่นจัดเต็ม</p>
+          <div class="card-actions">
+            <a class="btn" href="Foods/booth3.html">ดูร้าน</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- HOME 4 -->
+      <article class="card" data-category="home">
+        <div class="thumb">
+          <img src="../resources/booth/Home/booth4/necklace.jpg" alt="Crafted by Heart necklace">
+          <span class="badge">HOME & FASHION</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Crafted by Heart</h3>
+          <p class="card-text">เครื่องประดับทำมือสไตล์ Coquette/Y2K ดีไซน์ไม่ซ้ำ</p>
+          <div class="card-actions">
+            <a class="btn" href="Home%20&%20Fashion/booth4.html">ดูร้าน</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- HOME 5 -->
+      <article class="card" data-category="home">
+        <div class="thumb">
+          <img src="../resources/booth/Home/booth5/head.jpg" alt="Weavehouse head banner">
+          <span class="badge">HOME & FASHION</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Weavehouse</h3>
+          <p class="card-text">เสื้อผ้า daily wear มินิมอล ใส่สบาย ทุกโอกาส</p>
+          <div class="card-actions">
+            <a class="btn" href="Home%20&%20Fashion/booth5.html">ดูร้าน</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Thammasat Fair</p>
+    </div>
+  </footer>
+
+  <!-- Minimal JS: search + filter -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    function applyFilters() {
+      const term = (searchInput.value || '').toLowerCase().trim();
+      const activeBtn = document.querySelector('.filter-btn.is-active');
+      const category = activeBtn ? activeBtn.dataset.filter : 'all';
+
+      cards.forEach(card => {
+        const inCategory = category === 'all' || card.dataset.category === category;
+        const text = card.innerText.toLowerCase();
+        const match = !term || text.includes(term);
+        card.style.display = (inCategory && match) ? '' : 'none';
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', applyFilters);
+  </script>
 </body>
-
 </html>

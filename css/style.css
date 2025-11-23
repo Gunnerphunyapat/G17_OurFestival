@@ -133,7 +133,7 @@ header {
 .shop-title {
     position: absolute;
     left: 50%;
-    top: 70%;                  /* ขยับขึ้นลงได้ตามที่ชอบ */
+    top: 70%;                
     transform: translate(-50%, -50%);
     margin: 0;
     font-family: "Great Vibes", cursive;
@@ -143,7 +143,7 @@ header {
     text-align: center;
 }
 
-/* FOOTER */
+
 
 footer {
     margin-top: 30px;
@@ -155,7 +155,7 @@ footer {
     border-top: 1px solid rgba(74,66,62,0.12);
 }
 
-/* RESPONSIVE */
+
 
 @media (max-width: 900px) {
     .navbar { padding: 10px; }
