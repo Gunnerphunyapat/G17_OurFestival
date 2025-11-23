@@ -84,7 +84,7 @@ body {
     transform:
         translate(-40vw, 30vh)
         /* ตำแหน่งไปซ้าย */
-        scale(.35);
+        scale(.4);
     /* ย่อ */
 
     opacity: .9;
@@ -195,8 +195,8 @@ body>.member-popup {
 
 /* รูปใน popup */
 .member-popup img {
-    width: 100%;
-    height: 1000px;
+    width: 500px;
+    height: 800px;
     border-radius: 80px;
     /* เอา 50% ออก */
     border: none;
@@ -363,12 +363,13 @@ body>#memberPopup {
 
 #popupDataBox {
     top: 350px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
+    left: 48%;
+    transform: translateX(-52%);
+    font-size: 1.25rem;
     font-family: Verdana, sans-serif;
     color: #FFFFFF;
     background: none;
+    text-align: center;
     text-shadow: 5px 1px 3px rgba(0,0,0,0.5); 
 
 }
