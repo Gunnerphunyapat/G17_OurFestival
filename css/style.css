@@ -1,85 +1,12 @@
 @import url(https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Sofia&display=swap);
 
 body {
-    background-color: #F7F6EB;
-    width: 99%;
-}
-
-.logo {
-    font-family: oleo script swash caps;
-    color: #A6B7DA;
-    font-size: 60px;
-    text-shadow: -0.5px -0.5px 0 #422b23,
-        0.5px -0.5px 0 #422b23,
-        -0.5px 0.5px 0 #422b23,
-        0.5px 0.5px 0 #422b23;
-    text-align: center;
-    margin-top: -40px;
-}
-
-.nav-links {
-    background-color: #B1CDAC;
-    width: 100%;
-    margin-top: -40px;
-
-    .indexbar1 {
-        width: 25%;
-        text-align: center;
-    }
-
-    .indexbar2 {
-        width: 25%;
-        text-align: center;
-    }
-
-    .indexbar3 {
-        width: 25%;
-        text-align: center;
-    }
-
-    .indexbar4 {
-        width: 25%;
-        text-align: center;
-    }
-}
-
-.nav-links a {
-    color: #4A423E;
-}
-
-.indexchoose {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    .indexfood {
-        width: 20vw;
-        height: 8vw;
-        font-size: 2vw;
-        text-align: center;
-        background-color: #A6B7DA;
-        color: #4A423E;
-        border-radius: 12px;
-        border: 1px solid #4A423E
-    }
-
-    .indexfasion {
-        width: 20vw;
-        height: 8vw;
-        font-size: 2vw;
-        text-align: center;
-        background-color: #A6B7DA;
-        color: #4A423E;
-        border-radius: 12px;
-        border: 1px solid #4A423E
-    }
-}
-
-body {
     margin: 0;
+    width: 99%;
     font-family: "Kanit", sans-serif;
     background-color: #F7F6EB;
 }
+
 
 
 header {
@@ -100,7 +27,6 @@ header {
     align-items: center;
     gap: 6px;
 }
-
 
 .logo p {
     margin: 0;
@@ -145,6 +71,7 @@ header {
     transform: translateY(-1px);
 }
 
+/* ปุ่ม FOOD / FASION */
 
 .indexchoose {
     width: 100%;
@@ -165,7 +92,6 @@ header {
     height: 7vw;
     min-height: 60px;
     font-size: 1.6vw;
-    min-font-size: 16px;
     text-align: center;
     background: linear-gradient(135deg, #A6B7DA, #c2ceec);
     color: #4A423E;
@@ -186,24 +112,14 @@ header {
     filter: brightness(1.03);
 }
 
+/* HERO + TITLE บนรูป */
 
 .hero {
     max-width: 1100px;
     margin: 24px auto 40px;
     padding: 0 18px;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-inner {
-    background: linear-gradient(135deg, #B1CDAC, #A6B7DA);
-    border-radius: 28px;
-    padding: 10px;
-    width: 100%;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.16);
     position: relative;
 }
-
 
 .hero-img {
     width: 100%;
@@ -216,21 +132,15 @@ header {
 
 .shop-title {
     position: absolute;
-    right: 40px;
-    bottom: 32px;
+    left: 50%;
+    top: 70%;                
+    transform: translate(-50%, -50%);
     margin: 0;
     font-family: "Great Vibes", cursive;
     font-size: 3.4rem;
     color: #ffffff;
     text-shadow: 0 5px 12px rgba(0,0,0,0.6);
-}
-
-
-.hero {
-    position: relative;
-}
-.shop-title {
-
+    text-align: center;
 }
 
 
@@ -248,27 +158,13 @@ footer {
 
 
 @media (max-width: 900px) {
-    .navbar {
-        padding: 10px;
-    }
+    .navbar { padding: 10px; }
 
-    .logo p {
-        font-size: 40px;
-    }
+    .logo p { font-size: 40px; }
 
-    .nav-links {
-        border-radius: 20px;
-    }
+    .nav-links { border-radius: 20px; }
 
-    .nav-links td {
-        padding: 8px 0;
-    }
-
-    .shop-title {
-        right: 24px;
-        bottom: 24px;
-        font-size: 2.6rem;
-    }
+    .nav-links td { padding: 8px 0; }
 
     .indexfood,
     .indexfasion {
@@ -276,29 +172,26 @@ footer {
         height: 14vw;
         font-size: 3.2vw;
     }
+
+    .shop-title {
+        font-size: 2.6rem;
+        top: 70%;
+    }
 }
 
 @media (max-width: 600px) {
-    .logo p {
-        font-size: 32px;
-    }
+    .logo p { font-size: 32px; }
 
-    .navbar {
-        gap: 4px;
-    }
+    .navbar { gap: 4px; }
 
     .nav-links td {
         width: auto;
         font-size: 0.8rem;
     }
 
-    .indexchoose {
-        margin-top: 20px;
-    }
+    .indexchoose { margin-top: 20px; }
 
-    .indexchoose table {
-        border-spacing: 12px;
-    }
+    .indexchoose table { border-spacing: 12px; }
 
     .indexfood,
     .indexfasion {
@@ -309,9 +202,7 @@ footer {
     }
 
     .shop-title {
-        right: 18px;
-        bottom: 18px;
         font-size: 2.1rem;
-        text-align: right;
+        top: 70%;
     }
 }
