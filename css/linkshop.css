@@ -36,12 +36,12 @@ body{
   padding:8px 14px; border-radius:999px;
 }
 
-/* Hero */
+
 .page-hero{padding:28px 0 10px}
 .page-hero h1{margin:0 0 8px; font-size:clamp(24px,3.2vw,34px)}
 .page-hero p{color:var(--muted); margin:0}
 
-/* Controls */
+
 .controls{padding:6px 0 18px}
 .controls-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between}
 .search-wrap{flex:1 1 320px}
