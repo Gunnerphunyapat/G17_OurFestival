@@ -111,12 +111,10 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(247, 246, 235, 0.98) 0,
-    rgba(247, 246, 235, 0.9) 38%,
-    transparent 75%
-  );
+  background: linear-gradient(to right,
+      rgba(247, 246, 235, 0.98) 0,
+      rgba(247, 246, 235, 0.9) 38%,
+      transparent 75%);
 }
 
 .hero-text {
@@ -529,6 +527,7 @@ body {
   filter: brightness(1.05);
   transform: translateY(-1px);
 }
+
 .main-footer {
   max-width: 1100px;
   margin: 40px auto 24px;
