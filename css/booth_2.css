@@ -387,3 +387,159 @@ body {
     border-radius: 22px;
   }
 }
+/* ============ ORDER MODAL ============ */
+
+.order-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.order-backdrop.show {
+  display: flex;
+}
+
+.order-modal {
+  width: min(420px, 92vw);
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  padding: 18px 18px 16px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.order-close {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #777;
+}
+
+.order-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-left: 22px; /* กันไม่ให้ชนปุ่ม X */
+  margin-bottom: 8px;
+}
+
+.order-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.order-price {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.order-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.order-section-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.order-section h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.order-section h3 span {
+  font-size: 12px;
+  color: #888;
+  font-weight: 400;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #555;
+}
+
+.option-row input {
+  accent-color: #B1CDAC;
+}
+
+.order-section textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 10px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* footer ของ modal */
+
+.order-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f5f5f5;
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+
+.qty-control button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #d9e7d4;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.qty-control span {
+  min-width: 18px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.order-submit {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #2ecc71;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.16s ease, transform 0.16s ease;
+}
+
+.order-submit:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}

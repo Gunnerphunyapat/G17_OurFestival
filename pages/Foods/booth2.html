@@ -6,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booth 2 · Drinks Stall</title>
 
-  <!-- CSS ของบูธ 2 -->
   <link rel="stylesheet" href="../../css/booth_2.css" />
 </head>
 
 <body>
 
-  <!-- ============ HEADER / NAVBAR ============ -->
+  <!-- HEADER / NAVBAR -->
   <header class="site-header">
     <div class="nav-inner">
       <div class="brand">
@@ -31,10 +30,9 @@
 
   <main>
 
-    <!-- ============ HERO ============ -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
-        <!-- เปลี่ยนรูป hero ได้ตรง src นี้ -->
         <img
           src="../../resources/booth/Foods/booth2/Strawberry.jpg"
           alt="เมนูเครื่องดื่มบูธ Drinks Stall"
@@ -53,7 +51,7 @@
       </div>
     </section>
 
-    <!-- ============ PRODUCT GRID ============ -->
+    <!-- PRODUCT GRID -->
     <section class="products">
       <div class="products-header">
         <h2>Drinks Menu</h2>
@@ -73,7 +71,11 @@
             หอมหวานอมเปรี้ยวจากสตรอว์เบอร์รี่และโยเกิร์ต เนื้อเนียนดื่มง่าย ได้ทั้งความสดชื่นและโปรตีนเบา ๆ
           </p>
           <span class="price">฿65</span>
-          <button class="btn-buy">สั่งแก้วนี้</button>
+          <button class="btn-buy"
+                  data-drink="Strawberry Yogurt Smoothie"
+                  data-price="65">
+            สั่งแก้วนี้
+          </button>
         </article>
 
         <!-- 2 Watermelon -->
@@ -84,7 +86,11 @@
             แตงโมปั่นเย็นฉ่ำ ดับร้อนทันใจ ดื่มแล้วสดชื่น เหมาะกับอากาศร้อน ๆ ในงานสุด ๆ
           </p>
           <span class="price">฿45</span>
-          <button class="btn-buy">สั่งแก้วนี้</button>
+          <button class="btn-buy"
+                  data-drink="Watermelon Crush"
+                  data-price="45">
+            สั่งแก้วนี้
+          </button>
         </article>
 
         <!-- 3 Passion Orange -->
@@ -95,7 +101,11 @@
             ผสมผสานความเปรี้ยวสดใสของส้มและแพชชั่นฟรุต ได้รสเปรี้ยวหวานตื่นตัวทุกจิบ
           </p>
           <span class="price">฿55</span>
-          <button class="btn-buy">สั่งแก้วนี้</button>
+          <button class="btn-buy"
+                  data-drink="Passion Orange Smoothie"
+                  data-price="55">
+            สั่งแก้วนี้
+          </button>
         </article>
 
         <!-- 4 Plum Coke Shake -->
@@ -106,7 +116,11 @@
             ความซ่าหวานของโค้ก ตัดกับกลิ่นหอมอมเปรี้ยวของลูกพลัม เมนูซิกเนเจอร์ที่ไม่เหมือนใคร
           </p>
           <span class="price">฿50</span>
-          <button class="btn-buy">สั่งแก้วนี้</button>
+          <button class="btn-buy"
+                  data-drink="Plum Coke Shake"
+                  data-price="50">
+            สั่งแก้วนี้
+          </button>
         </article>
 
         <!-- 5 Red Soda -->
@@ -117,23 +131,237 @@
             โซดาสีแดงสุดคลาสสิก ซ่าหวานกำลังดี ดื่มแล้วเหมือนได้รีเฟรชอารมณ์ พร้อมลุยงานต่อ
           </p>
           <span class="price">฿50</span>
-          <button class="btn-buy">สั่งแก้วนี้</button>
+          <button class="btn-buy"
+                  data-drink="Red Soda Shake"
+                  data-price="50">
+            สั่งแก้วนี้
+          </button>
         </article>
 
       </div>
     </section>
 
-    <!-- ============ CONDITION BOX ============ -->
+    <!-- CONDITION BOX -->
     <section class="condition">
       <h4>ปรับระดับความหวาน · เลือกนม · เพิ่มท็อปปิ้ง</h4>
       <ul>
         <li>ระดับความหวาน: 0% • 25% • 50% • 75% • 100%</li>
         <li>เปลี่ยนนม/โยเกิร์ตเป็นนมอัลมอนด์ +15฿</li>
-        <li>เพิ่มท็อปปิ้ง (บุก / ไข่มุก / วุ้นมะพร้าว) +10฿</li>
+        <li>เพิ่มท็อปปิ้ง (ไข่มุกบราวน์ชูการ์ / เจลลี่ผลไม้ / วุ้นมะพร้าว) +10฿</li>
       </ul>
     </section>
 
   </main>
+
+  <!-- MODAL เลือกความหวาน + ท็อปปิ้ง -->
+  <div class="order-backdrop" id="orderBackdrop">
+    <div class="order-modal">
+      <button class="order-close" id="orderClose">&times;</button>
+
+      <div class="order-header">
+        <h2 id="orderDrinkName">Iced Black Tea</h2>
+        <span class="order-price">
+          ฿<span id="orderBasePrice">45</span>
+        </span>
+      </div>
+
+      <form id="orderForm">
+        <!-- Packaging -->
+        <div class="order-section">
+          <div class="order-section-top">
+            <h3>บรรจุภัณฑ์ <span>(เลือก 1)</span></h3>
+          </div>
+          <label class="option-row">
+            <input type="radio" name="packaging" value="glass-ready" data-extra="0" required>
+            <span>แก้วพร้อมดื่ม</span>
+          </label>
+          <label class="option-row">
+            <input type="radio" name="packaging" value="glass-ice" data-extra="5">
+            <span>แก้ว แยกน้ำแข็ง (+฿5)</span>
+          </label>
+          <label class="option-row">
+            <input type="radio" name="packaging" value="bottle" data-extra="10">
+            <span>ขวดพกพา (+฿10)</span>
+          </label>
+        </div>
+
+        <!-- Sweetness -->
+        <div class="order-section">
+          <div class="order-section-top">
+            <h3>ความหวาน <span>(เลือก 1)</span></h3>
+          </div>
+          <label class="option-row">
+            <input type="radio" name="sweetness" value="130" required>
+            <span>130% - หวานมาก</span>
+          </label>
+          <label class="option-row">
+            <input type="radio" name="sweetness" value="100">
+            <span>100% - หวานปกติ</span>
+          </label>
+          <label class="option-row">
+            <input type="radio" name="sweetness" value="70">
+            <span>70% - หวานน้อย</span>
+          </label>
+          <label class="option-row">
+            <input type="radio" name="sweetness" value="30">
+            <span>30% - หวานน้อยมาก</span>
+          </label>
+        </div>
+
+        <!-- Toppings -->
+        <div class="order-section">
+          <div class="order-section-top">
+            <h3>ท็อปปิ้ง <span>(เลือกได้หลายอย่าง)</span></h3>
+          </div>
+          <label class="option-row">
+            <input type="checkbox" name="topping" value="boba" data-extra="10">
+            <span>ไข่มุกบราวน์ชูการ์ (+฿10)</span>
+          </label>
+          <label class="option-row">
+            <input type="checkbox" name="topping" value="jelly" data-extra="10">
+            <span>เจลลี่ผลไม้ (+฿10)</span>
+          </label>
+          <label class="option-row">
+            <input type="checkbox" name="topping" value="coconut" data-extra="10">
+            <span>วุ้นมะพร้าว (+฿10)</span>
+          </label>
+        </div> 
+                <!-- Milk option -->
+        <div class="order-section">
+          <div class="order-section-top">
+            <h3>ประเภทนม (สำหรับเมนูSmoothie) <span>(ไม่บังคับ)</span></h3>
+          </div>
+          <label class="option-row">
+            <input type="checkbox" name="milk" value="almond" data-extra="15">
+            <span>เปลี่ยนนม/โยเกิร์ตเป็นนมอัลมอนด์ (+฿15)</span>
+          </label>
+        </div>
+
+        <!-- Note -->
+        <div class="order-section">
+          <h3>หมายเหตุถึงร้าน (ไม่บังคับ)</h3>
+          <textarea name="note" rows="2" placeholder="เช่น ไม่ใส่หลอด ขอแก้วแยกน้ำแข็ง ฯลฯ"></textarea>
+        </div>
+
+        <!-- Quantity + summary -->
+        <div class="order-footer">
+          <div class="qty-control">
+            <button type="button" id="qtyMinus">−</button>
+            <span id="orderQty">1</span>
+            <button type="button" id="qtyPlus">+</button>
+          </div>
+          <button type="submit" class="order-submit">
+            เพิ่มลงตะกร้า · ฿<span id="orderTotalPrice">0</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const backdrop = document.getElementById("orderBackdrop");
+  const closeBtn = document.getElementById("orderClose");
+  const drinkNameEl = document.getElementById("orderDrinkName");
+  const basePriceEl = document.getElementById("orderBasePrice");
+  const totalPriceEl = document.getElementById("orderTotalPrice");
+  const qtyEl = document.getElementById("orderQty");
+  const qtyMinus = document.getElementById("qtyMinus");
+  const qtyPlus = document.getElementById("qtyPlus");
+  const orderForm = document.getElementById("orderForm");
+
+  let currentBasePrice = 0;
+
+  // คำนวณราคารวม
+  function updateTotalPrice() {
+    const qty = parseInt(qtyEl.textContent, 10) || 1;
+    let total = currentBasePrice;
+
+    // packaging
+    const packaging = orderForm.querySelector('input[name="packaging"]:checked');
+    if (packaging) {
+      const extra = Number(packaging.dataset.extra || 0);
+      total += extra;
+    }
+
+    // toppings (เลือกได้หลายอัน)
+    const toppings = orderForm.querySelectorAll('input[name="topping"]:checked');
+    toppings.forEach((t) => {
+      const extra = Number(t.dataset.extra || 0);
+      total += extra;
+    });
+
+    // milk – นมอัลมอนด์ (+15)
+    const milks = orderForm.querySelectorAll('input[name="milk"]:checked');
+    milks.forEach((m) => {
+      const extra = Number(m.dataset.extra || 0);
+      total += extra;
+    });
+
+    total = total * qty;
+    totalPriceEl.textContent = total;
+  }
+
+  // เปิด modal เมื่อกด "สั่งแก้วนี้"
+  document.querySelectorAll(".btn-buy").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const drinkName = btn.dataset.drink || "Drinks";
+      const price = Number(btn.dataset.price || 0);
+
+      drinkNameEl.textContent = drinkName;
+      basePriceEl.textContent = price;
+      currentBasePrice = price;
+
+      // reset form + qty ทุกครั้งที่เปิด
+      orderForm.reset();
+      qtyEl.textContent = "1";
+      updateTotalPrice();
+
+      backdrop.classList.add("show");
+    });
+  });
+
+  // ฟังก์ชันปิด modal
+  function closeModal() {
+    backdrop.classList.remove("show");
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  // คลิกนอกกล่อง = ปิด
+  backdrop.addEventListener("click", (e) => {
+    if (e.target === backdrop) closeModal();
+  });
+
+  // เปลี่ยนจำนวนแก้ว
+  qtyMinus.addEventListener("click", () => {
+    let qty = parseInt(qtyEl.textContent, 10) || 1;
+    if (qty > 1) {
+      qty--;
+      qtyEl.textContent = qty;
+      updateTotalPrice();
+    }
+  });
+
+  qtyPlus.addEventListener("click", () => {
+    let qty = parseInt(qtyEl.textContent, 10) || 1;
+    qty++;
+    qtyEl.textContent = qty;
+    updateTotalPrice();
+  });
+
+  // เวลาเปลี่ยนตัวเลือกในฟอร์มให้คำนวณใหม่
+  orderForm.addEventListener("change", updateTotalPrice);
+
+  // ตอนกดปุ่ม "เพิ่มลงตะกร้า"
+  orderForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("เพิ่มลงตะกร้าเรียบร้อย!");
+    closeModal();
+  });
+});
+  </script>
 
 </body>
 
