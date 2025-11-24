@@ -4,98 +4,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaoCoLow Bakery</title>
+
+  <!-- ฟอนต์ Prompt เหมือนบูธ 2 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="../../css/booth_3.css">
-  <title>caocolow bakery</title>
 </head>
 
 <body>
 
-  <header>
-        <div class="header-content">
-            <div class="site-title"><h2>🍪 Caocolow Bakery 🍪</h2></div>
-            <div class="sitetitle"><p>Fresh baked cookies & pastries made with love</p></div>
-        </div>
-        <div class="list">
-                    <p class="list-button"><a href="../../index.html">หน้าแรก</a></p>
-                    <p class="list-button"><a href="../linkshop.html">รายชื่อร้านค้า</a></p>
-                    <p class="list-button"><a href="../registration.html">ลงทะเบียน</a></p>
-                    <p class="list-button"><a href="../feedback.html">ประเมิน</a></p>
-        </div>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-title">CaoCoLow Bakery</div>
+        <div class="brand-subtitle">Fresh baked cookies &amp; pastries</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../../index.html">หน้าแรก</a>
+        <a href="../linkshop.html">รายชื่อร้านค้า</a>
+        <a href="../registration.html">ลงทะเบียน</a>
+        <a href="../feedback.html">ประเมิน</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="banner">
-    <img src="../../resources/booth/Foods/booth3/banner.png" alt="banner picture">
-  </div>
+  <main>
 
-  <section class="booth-intro">
-            <h1 class="booth-heading">🍪 Caocolow Bakery 🍪</h1>
-            <p class="booth-description">
-                คุกกี้เรียบง่ายแต่ไม่ธรรมดา! กินได้ทุกคำไม่มีวันเบื่อ ไส้แน่นจัดเต็ม <br>
-                !!!ระวังกินหมดโดยไม่รู้ตัว!!!
-            </p>
-  </section>
+    <!-- HERO (การ์ดด้านบน) -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img
+          src="../../resources/booth/Foods/booth3/banner.png"
+          alt="คุกกี้และเบเกอรี่จาก CaoCoLow Bakery"
+          class="hero-img"
+        />
 
+        <div class="hero-overlay"></div>
 
-  <section class="products">
-    <div class="product-list">
-
-      <!-- 1 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/softcookie-vanilla.jpg" alt="ซอฟคุกกี้วนิลา">
-        <h3>ซอฟคุกกี้วนิลา</h3>
-        <p>คุกกี้เนื้อนุ่ม หอมวนิลา ละลายในปาก</p>
-        <span class="price">฿35</span>
-        <button class="btn-buy">ซื้อเลย</button>
+        <div class="hero-text">
+          <p class="hero-kicker">Booth 3 · CaoCoLow Bakery</p>
+          <h1>Soft Cookies &amp; Sweet Bakes</h1>
+          <p class="hero-desc">
+            คุกกี้และเบเกอรี่โฮมเมด อบใหม่หอมกรุ่นจากเตา<br>
+            เนื้อหนึบ นุ่ม ละมุน ทุกคำที่กินระวังหมดไม่รู้ตัว!
+          </p>
+        </div>
       </div>
+    </section>
 
-      <!-- 2 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/matcha-cookie.jpg" alt="คุกกี้ชาเขียวมัทฉะ">
-        <h3>คุกกี้ชาเขียวมัทฉะ</h3>
-        <p>หอมมัทฉะเข้มข้น หวานน้อยกำลังดี</p>
-        <span class="price">฿35</span>
-        <button class="btn-buy">ซื้อเลย</button>
+    <!-- หัวข้อเมนูหลัก -->
+    <section class="menu-header">
+      <p class="menu-label">BOOTH 3 · BAKERY MENU</p>
+      <h2 class="menu-title">CAOCOLOW BAKERY</h2>
+      <p class="menu-subtitle">
+        เลือกคุกกี้หรือเบเกอรี่ชิ้นโปรด แล้วแวะมารับความหวานกรุบกรอบในงานกันได้เลย
+      </p>
+    </section>
+
+    <!-- PRODUCT GROUP: Cookies & Bakery -->
+    <section class="product-group">
+      <h3 class="group-title">Cookies &amp; Pastries</h3>
+      <p class="group-subtitle">ทุกชิ้นอบสดใหม่ หอมเนย หวานละมุนกำลังดี</p>
+
+      <div class="product-list">
+
+        <!-- 1 -->
+        <article class="item-card">
+          <img src="../../resources/booth/Foods/booth3/softcookie-vanilla.jpg" alt="ซอฟคุกกี้วนิลา">
+          <h4>ซอฟคุกกี้วนิลา</h4>
+          <p>คุกกี้เนื้อนุ่ม หอมวนิลาละมุน ละลายในปากทุกคำ</p>
+          <div class="item-bottom">
+            <span class="price">฿35</span>
+            <button class="btn-buy">ซื้อเลย</button>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="item-card">
+          <img src="../../resources/booth/Foods/booth3/matcha-cookie.jpg" alt="คุกกี้ชาเขียวมัทฉะ">
+          <h4>คุกกี้ชาเขียวมัทฉะ</h4>
+          <p>หอมมัทฉะเข้มข้น หวานน้อย สำหรับคนรักชาเขียวตัวจริง</p>
+          <div class="item-bottom">
+            <span class="price">฿35</span>
+            <button class="btn-buy">ซื้อเลย</button>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="item-card">
+          <img src="../../resources/booth/Foods/booth3/oreo-cookie.jpg" alt="คุกกี้โอริโอ้">
+          <h4>คุกกี้โอริโอ้</h4>
+          <p>ซอฟคุกกี้ผสมโอริโอ้ กรอบนุ่ม หอมหวานเคี้ยวเพลิน</p>
+          <div class="item-bottom">
+            <span class="price">฿35</span>
+            <button class="btn-buy">ซื้อเลย</button>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="item-card">
+          <img src="../../resources/booth/Foods/booth3/choco-strawberry-cookie.jpg" alt="คุกกี้ช็อกโกแลตสตรอเบอรี่">
+          <h4>คุกกี้ช็อกโกแลตสตรอเบอรี่</h4>
+          <p>ช็อกโกแลตเข้มข้น ตัดกับความหวานฉ่ำของสตรอเบอรี่</p>
+          <div class="item-bottom">
+            <span class="price">฿50</span>
+            <button class="btn-buy">ซื้อเลย</button>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="item-card">
+          <img src="../../resources/booth/Foods/booth3/strawberry-cheesecake.jpg" alt="ชีสเค้กสตรอเบอรี่">
+          <h4>ชีสเค้กสตรอเบอรี่</h4>
+          <p>ชีสเค้กเนื้อนุ่ม หอมชีส ราดซอสสตรอเบอรี่เปรี้ยวหวาน</p>
+          <div class="item-bottom">
+            <span class="price">฿60</span>
+            <button class="btn-buy">ซื้อเลย</button>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="item-card">
+          <img src="../../resources/booth/Foods/booth3/chocolate-cake.jpg" alt="เค้กช็อกโกแลตหน้านิ่ม">
+          <h4>เค้กช็อกโกแลตหน้านิ่ม</h4>
+          <p>เค้กช็อกโกแลตเข้มข้น หน้านิ่มละมุน เอาใจสายดาร์กช็อก</p>
+          <div class="item-bottom">
+            <span class="price">฿50</span>
+            <button class="btn-buy">ซื้อเลย</button>
+          </div>
+        </article>
+
       </div>
+    </section>
 
-      <!-- 3 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/oreo-cookie.jpg" alt="คุกกี้โอริโอ้">
-        <h3>คุกกี้โอริโอ้</h3>
-        <p>คุกกี้กรอบนุ่มผสมโอริโอ้ หอมอร่อย</p>
-        <span class="price">฿35</span>
-        <button class="btn-buy">ซื้อเลย</button>
-      </div>
-
-      <!-- 4 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/choco-strawberry-cookie.jpg" alt="คุกกี้ช็อกโกแลตสตรอเบอรี่">
-        <h3>คุกกี้ช็อกโกแลตสตรอเบอรี่</h3>
-        <p>รสช็อกโกแลตเข้มข้น ตัดกับสตรอเบอรี่สด</p>
-        <span class="price">฿50</span>
-        <button class="btn-buy">ซื้อเลย</button>
-      </div>
-
-      <!-- 5 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/strawberry-cheesecake.jpg" alt="ชีสเค้กสตรอเบอรี่">
-        <h3>ชีสเค้กสตรอเบอรี่</h3>
-        <p>ชีสเค้กเนื้อนุ่ม ราดซอสสตรอเบอรี่หอมหวาน</p>
-        <span class="price">฿60</span>
-        <button class="btn-buy">ซื้อเลย</button>
-      </div>
-
-      <!-- 6 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/chocolate-cake.jpg" alt="เค้กช็อกโกแลตหน้านิ่ม">
-        <h3>เค้กช็อกโกแลตหน้านิ่ม</h3>
-        <p>เค้กช็อกโกแลตเข้มข้น หน้านิ่มละมุนลิ้น</p>
-        <span class="price">฿50</span>
-        <button class="btn-buy">ซื้อเลย</button>
-      </div>
-
-    </div>
-  </section>
+  </main>
 
 </body>
-
 </html>
