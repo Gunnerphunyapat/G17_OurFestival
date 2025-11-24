@@ -1,75 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/booth_2.css">
-    <title>Drinks Stall</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booth 2 · Drinks Stall</title>
+
+  <!-- CSS ของบูธ 2 -->
+  <link rel="stylesheet" href="../../css/booth_2.css" />
 </head>
 
 <body>
+
+  <!-- ============ HEADER / NAVBAR ============ -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-title">Drinks Stall</div>
+        <div class="brand-subtitle">Fresh &amp; Chill Drinks</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../../index.html">หน้าแรก</a>
+        <a href="../linkshop.html">รายชื่อร้านค้า</a>
+        <a href="../registration.html">ลงทะเบียน</a>
+        <a href="../feedback.html">ประเมิน</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <!-- เปลี่ยนรูป hero ได้ตรง src นี้ -->
+        <img
+          src="../../resources/booth/Foods/booth2/Strawberry.jpg"
+          alt="เมนูเครื่องดื่มบูธ Drinks Stall"
+          class="hero-img"
+        />
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+          <p class="hero-kicker">Booth 2 · Drinks Stall</p>
+          <h1>Fresh Drinks for Your Fair Day</h1>
+          <p class="hero-desc">
+            เมนูปั่นและโซดาสดชื่น ดื่มแล้วรีเฟรช พร้อมเดินเล่นใน Thammasat Fair แบบไม่หมดแรง
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT GRID ============ -->
     <section class="products">
- <h2>Drinks Stall</h2>
-  <div class="product-list">
+      <div class="products-header">
+        <h2>Drinks Menu</h2>
+        <p class="subheading">
+          เลือกเครื่องดื่มที่ใช่ ปรับระดับความหวาน และเพิ่มท็อปปิ้งได้ตามใจ
+        </p>
+      </div>
 
-    <!-- 1 -->
-    <div class="product-card">
-        <img src="../../resources/booth/Foods/booth2/Strawberry.jpg" >
-        <h3>Strawberry Yogurt Smoothie</h3>
-        <p>หอมหวานอมเปรี้ยว เพิ่มความสดชื่นและได้โปรตีนจากโยเกิร์ต</p>
-        <span class="price">฿65</span>
-        <button class="btn-buy">ซื้อเลย</button>
-    </div>
+      <div class="product-list">
 
-    <!-- 2 -->
-    <div class="product-card">
-        <img src="../../resources/booth/Foods/booth2/Watermelon.jpg" >
-        <h3>Watermelon Crush</h3>
-        <p>เย็นฉ่ำ สดชื่น ดื่มง่ายที่สุดในอากาศร้อน</p>
-        <span class="price">฿45</span>
-        <button class="btn-buy">ซื้อเลย</button>
-    </div>
+        <!-- 1 Strawberry -->
+        <article class="product-card">
+          <span class="badge">Best Seller</span>
+          <img src="../../resources/booth/Foods/booth2/Strawberry.jpg" alt="Strawberry Yogurt Smoothie" />
+          <h3>Strawberry Yogurt Smoothie</h3>
+          <p>
+            หอมหวานอมเปรี้ยวจากสตรอว์เบอร์รี่และโยเกิร์ต เนื้อเนียนดื่มง่าย ได้ทั้งความสดชื่นและโปรตีนเบา ๆ
+          </p>
+          <span class="price">฿65</span>
+          <button class="btn-buy">สั่งแก้วนี้</button>
+        </article>
 
-    <!-- 3 -->
-    <div class="product-card">
-        <img src="../../resources/booth/Foods/booth2/Orange.jpg" >
-        <h3>Passion Orange Smoothie</h3>
-        <p>เปรี้ยวหวานกำลังดี ตื่นตัวทันทีตั้งแต่จิบแรก</p>
-        <span class="price">฿55</span>
-        <button class="btn-buy">ซื้อเลย</button>
-    </div>
+        <!-- 2 Watermelon -->
+        <article class="product-card">
+          <img src="../../resources/booth/Foods/booth2/Watermelon.jpg" alt="Watermelon Crush" />
+          <h3>Watermelon Crush</h3>
+          <p>
+            แตงโมปั่นเย็นฉ่ำ ดับร้อนทันใจ ดื่มแล้วสดชื่น เหมาะกับอากาศร้อน ๆ ในงานสุด ๆ
+          </p>
+          <span class="price">฿45</span>
+          <button class="btn-buy">สั่งแก้วนี้</button>
+        </article>
 
-    <!-- 4 -->
-    <div class="product-card">
-        <img src="../../resources/booth/Foods/booth2/Coke.jpg" >
-        <h3>Plum Coke Shake</h3>
-        <p>รสซ่าหวานจากโค้ก ตัดกับความอมเปรี้ยวหอมของลูกพลัม ดื่มแล้วสดชื่นซู่ซ่ามีเอกลักษณ์ไม่เหมือนใคร</p>
-        <span class="price">฿50</span>
-        <button class="btn-buy">ซื้อเลย</button>
-    </div>
+        <!-- 3 Passion Orange -->
+        <article class="product-card">
+          <img src="../../resources/booth/Foods/booth2/Orange.jpg" alt="Passion Orange Smoothie" />
+          <h3>Passion Orange Smoothie</h3>
+          <p>
+            ผสมผสานความเปรี้ยวสดใสของส้มและแพชชั่นฟรุต ได้รสเปรี้ยวหวานตื่นตัวทุกจิบ
+          </p>
+          <span class="price">฿55</span>
+          <button class="btn-buy">สั่งแก้วนี้</button>
+        </article>
 
-    <!-- 5 -->
-    <div class="product-card">
-        <h3>Red Soda Shake</h3>
-        <img src="../../resources/booth/Foods/booth2/Redsoda.jpg" >
-        <p>ซ่าหวาน สดชื่นถึงใจจากโซดาและไซรัปสีแดงสุดคลาสสิก ดื่มแล้วเหมือนรีเฟรชอารมณ์ทันที</p>
-        <span class="price">฿50</span>
-        <button class="btn-buy">ซื้อเลย</button>
-    </div>
+        <!-- 4 Plum Coke Shake -->
+        <article class="product-card">
+          <img src="../../resources/booth/Foods/booth2/Coke.jpg" alt="Plum Coke Shake" />
+          <h3>Plum Coke Shake</h3>
+          <p>
+            ความซ่าหวานของโค้ก ตัดกับกลิ่นหอมอมเปรี้ยวของลูกพลัม เมนูซิกเนเจอร์ที่ไม่เหมือนใคร
+          </p>
+          <span class="price">฿50</span>
+          <button class="btn-buy">สั่งแก้วนี้</button>
+        </article>
 
- </div>
-</section>
+        <!-- 5 Red Soda -->
+        <article class="product-card">
+          <img src="../../resources/booth/Foods/booth2/Redsoda.jpg" alt="Red Soda Shake" />
+          <h3>Red Soda Shake</h3>
+          <p>
+            โซดาสีแดงสุดคลาสสิก ซ่าหวานกำลังดี ดื่มแล้วเหมือนได้รีเฟรชอารมณ์ พร้อมลุยงานต่อ
+          </p>
+          <span class="price">฿50</span>
+          <button class="btn-buy">สั่งแก้วนี้</button>
+        </article>
 
-    <div class="condition">
-    <h4> สั่งปรับระดับความหวาน</h4>
-        <ul>
-          <li>0% • 25% • 50% • 75% • 100%</li>
-          <li>เปลี่ยนนม/โยเกิร์ตเป็นนมอัลมอนด์ +15฿</li>
-          <li>เพิ่มท็อปปิ้ง (บุก/ไข่มุก/วุ้นมะพร้าว) +10฿</li>
-        </ul>
-    </div>
+      </div>
+    </section>
 
+    <!-- ============ CONDITION BOX ============ -->
+    <section class="condition">
+      <h4>ปรับระดับความหวาน · เลือกนม · เพิ่มท็อปปิ้ง</h4>
+      <ul>
+        <li>ระดับความหวาน: 0% • 25% • 50% • 75% • 100%</li>
+        <li>เปลี่ยนนม/โยเกิร์ตเป็นนมอัลมอนด์ +15฿</li>
+        <li>เพิ่มท็อปปิ้ง (บุก / ไข่มุก / วุ้นมะพร้าว) +10฿</li>
+      </ul>
+    </section>
+
+  </main>
 
 </body>
 
