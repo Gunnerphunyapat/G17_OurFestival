@@ -13,6 +13,7 @@
 /* ================= GLOBAL ================= */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   }
 
 * {
@@ -38,7 +39,7 @@ body {
   color: inherit;
   /* ใช้สีเดิมของ navbar */
   text-decoration: none;
-  font-size: 3.5em;
+  font-size: 2em;
   /* เอาเส้นใต้ทิ้ง */
   font-weight: 700;
   /* (เลือกได้) เพิ่มน้ำหนักตัวอักษร */
