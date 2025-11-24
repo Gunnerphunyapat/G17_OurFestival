@@ -122,12 +122,10 @@ body.booth-page {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 247, 252, 0.94) 0%,
-    rgba(255, 247, 252, 0.9) 44%,
-    rgba(255, 247, 252, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 247, 252, 0.94) 0%,
+      rgba(255, 247, 252, 0.9) 44%,
+      rgba(255, 247, 252, 0.1) 100%);
 }
 
 .hero-text {

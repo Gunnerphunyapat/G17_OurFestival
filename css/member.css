@@ -506,25 +506,33 @@ body>#memberPopup {
 }
 
 @media (max-width: 768px) {
+
     /* 1. ปรับขนาดวงล้อให้เล็กลงมาก */
     :root {
-        --stage-size: 380px; /* ลดเหลือประมาณครึ่ง */
-        --member-size: 80px; /* ลดขนาดรูปสมาชิก */
-        --radius: 180px; /* ลดรัศมีวงล้อ */
+        --stage-size: 380px;
+        /* ลดเหลือประมาณครึ่ง */
+        --member-size: 80px;
+        /* ลดขนาดรูปสมาชิก */
+        --radius: 180px;
+        /* ลดรัศมีวงล้อ */
     }
 
     /* 2. ปรับขนาดตัวอักษรของ Popup หลัก */
     #popupNameBox,
     #popupSurnameBox {
-        font-size: 3rem; /* ลดจาก 8rem */
-        top: 250px; /* ปรับตำแหน่ง */
+        font-size: 3rem;
+        /* ลดจาก 8rem */
+        top: 250px;
+        /* ปรับตำแหน่ง */
     }
 
     #popupRoleBox {
-        font-size: 2.5rem; /* ลดจาก 7.3rem */
-        top: 150px; /* ปรับตำแหน่ง */
+        font-size: 2.5rem;
+        /* ลดจาก 7.3rem */
+        top: 150px;
+        /* ปรับตำแหน่ง */
     }
-    
+
     /* 3. ปรับขนาด Popup รูปภาพให้เล็กลง */
     #popupImgBox {
         width: 100px;
@@ -539,19 +547,21 @@ body>#memberPopup {
 }
 
 @media (max-width: 1000px) {
+
     /* ================= 1. ปรับขนาดตัวแปรหลัก (วงล้อ) ================= */
     :root {
-        --stage-size: 380px;  /* ลดขนาดวงล้อ */
-        --member-size: 55px;  
-        --radius: 180px;      
+        --stage-size: 380px;
+        /* ลดขนาดวงล้อ */
+        --member-size: 55px;
+        --radius: 180px;
     }
 
     /* ================= 2. ปรับตำแหน่ง/ขนาด Popup ชื่อ ตำแหน่ง Bio ================= */
-    
+
     /* Popup รูปบทบาท (Role Image) */
     #popupImgBox {
-        top: 20px;          
-        width: 100px;       
+        top: 20px;
+        width: 100px;
         height: 100px;
         left: 50%;
         transform: translateX(-50%);
@@ -559,64 +569,66 @@ body>#memberPopup {
 
     /* Popup ตำแหน่ง (Role) */
     #popupRoleBox {
-        top: 120px;          
-        font-size: 2rem;     
-        width: 80%;          
+        top: 120px;
+        font-size: 2rem;
+        width: 80%;
         transform: translateX(-50%);
-        white-space: normal; 
-        padding-bottom: 5px; 
+        white-space: normal;
+        padding-bottom: 5px;
     }
 
     /* Popup ชื่อและนามสกุล */
     #popupNameBox,
     #popupSurnameBox {
-        
+
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;          
-        font-size: 2.5rem;   
+        width: 90%;
+        font-size: 2.5rem;
         line-height: 1.1;
     }
 
     #popupNameBox {
-        top: 200px;          
+        top: 200px;
     }
 
     #popupSurnameBox {
-        top: 250px;          
+        top: 250px;
     }
 
     /* Popup Bio (คำอธิบายหน้าที่) */
     #popupDataBox {
-        top: 310px;          
+        top: 310px;
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;          
-        font-size: 0.65rem;  
+        width: 90%;
+        font-size: 0.65rem;
         line-height: 1rem;
         text-align: center;
     }
 
     /* ================= 3. ปรับ Popup ข้อมูลเพิ่มเติม (#memberPopup) ================= */
-    
-    body > .member-popup {
+
+    body>.member-popup {
         /* ย้ายไป มุมขวาล่าง */
         right: 15px;
         bottom: 15px;
         top: auto;
         left: auto;
-        
+
         display: flex;
-        flex-direction: column; /* รูปบน ข้อมูลล่าง */
-        align-items: center;    /* จัดให้อยู่ตรงกลางของ Popup */
+        flex-direction: column;
+        /* รูปบน ข้อมูลล่าง */
+        align-items: center;
+        /* จัดให้อยู่ตรงกลางของ Popup */
         gap: 10px;
-        
+
         /* กำหนดขนาดที่แน่นอนและเล็กเพื่อไม่ให้ทับจอมากเกินไป */
-        width: 180px; 
-        height: auto; 
-        
+        width: 180px;
+        height: auto;
+
         /* เพิ่มพื้นหลังและขอบเพื่อให้มองเห็นชัดเจน */
-        background: none; 
+        background: none;
         backdrop-filter: blur(8px);
         border-radius: 15px;
         padding: 10px;
@@ -625,7 +637,7 @@ body>#memberPopup {
         opacity: 0;
         transform: translateY(20px) scale(0.9);
     }
-    
+
     /* แสดง popup สไลด์ขึ้น */
     .member-popup.show {
         opacity: 1;
@@ -639,34 +651,38 @@ body>#memberPopup {
         pointer-events: none;
         transform: translateY(20px) scale(0.9);
     }
-    
+
     /* รูปภาพใน Popup ข้อมูล */
     .member-popup img {
         /* กว้างเต็มพื้นที่ของ member-popup */
         height: 100%;
         max-width: 100px;
-        max-height: 150px; /* จำกัดความสูงของรูปเต็มตัว */
-        border-radius: 10px; 
+        max-height: 150px;
+        /* จำกัดความสูงของรูปเต็มตัว */
+        border-radius: 10px;
         object-fit: cover;
     }
-    
+
     /* กล่องข้อมูลใต้รูป */
     .popup-info {
         margin-left: 0;
         text-align: center;
         width: 100%;
     }
-    
+
     /* ปรับขนาดตัวอักษรใน popup-info */
     .popup-info h3,
     .popup-info p {
         margin: 0;
         margin-left: 0;
         text-align: center;
-        font-size: 0.75rem; /* ลดขนาดตัวอักษรลงมากเพื่อให้ข้อความยาวๆ ไม่ล้น */
+        font-size: 0.75rem;
+        /* ลดขนาดตัวอักษรลงมากเพื่อให้ข้อความยาวๆ ไม่ล้น */
         line-height: 1.3;
-        white-space: normal; /* สำคัญ: ข้อความขึ้นบรรทัดใหม่ */
-        text-shadow: none; /* ลบเงาข้อความออก */
+        white-space: normal;
+        /* สำคัญ: ข้อความขึ้นบรรทัดใหม่ */
+        text-shadow: none;
+        /* ลบเงาข้อความออก */
     }
 
     /* 4. ปรับ Back Button */
@@ -678,19 +694,21 @@ body>#memberPopup {
 
 
 @media (max-width: 1568px) and (min-width: 1001px) {
+
     /* ================= 1. ปรับขนาดตัวแปรหลัก (วงล้อ) ================= */
     :root {
-        --stage-size: 500px;  /* ลดขนาดวงล้อ */
-        --member-size: 80px;  
-        --radius: 250px;      
+        --stage-size: 500px;
+        /* ลดขนาดวงล้อ */
+        --member-size: 80px;
+        --radius: 250px;
     }
 
     /* ================= 2. ปรับตำแหน่ง/ขนาด Popup ชื่อ ตำแหน่ง Bio ================= */
-    
+
     /* Popup รูปบทบาท (Role Image) */
     #popupImgBox {
-        top: 20px;          
-        width: 100px;       
+        top: 20px;
+        width: 100px;
         height: 100px;
         left: 50%;
         transform: translateX(-50%);
@@ -698,64 +716,66 @@ body>#memberPopup {
 
     /* Popup ตำแหน่ง (Role) */
     #popupRoleBox {
-        top: 120px;          
-        font-size: 2rem;     
-        width: 80%;          
+        top: 120px;
+        font-size: 2rem;
+        width: 80%;
         transform: translateX(-50%);
-        white-space: normal; 
-        padding-bottom: 5px; 
+        white-space: normal;
+        padding-bottom: 5px;
     }
 
     /* Popup ชื่อและนามสกุล */
     #popupNameBox,
     #popupSurnameBox {
-        
+
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;          
-        font-size: 5rem;   
+        width: 90%;
+        font-size: 5rem;
         line-height: 1.1;
     }
 
     #popupNameBox {
-        top: 300px;          
+        top: 300px;
     }
 
     #popupSurnameBox {
-        top: 400px;          
+        top: 400px;
     }
 
     /* Popup Bio (คำอธิบายหน้าที่) */
     #popupDataBox {
-        top: 200px;          
+        top: 200px;
         left: 50%;
         transform: translateX(-50%);
-        width: 90%;          
-        font-size: 1rem;  
+        width: 90%;
+        font-size: 1rem;
         line-height: 1.5rem;
         text-align: center;
     }
 
     /* ================= 3. ปรับ Popup ข้อมูลเพิ่มเติม (#memberPopup) ================= */
-    
-    body > .member-popup {
+
+    body>.member-popup {
         /* ย้ายไป มุมขวาล่าง */
         right: 15px;
         bottom: 15px;
         top: auto;
         left: auto;
-        
+
         display: flex;
-        flex-direction: column; /* รูปบน ข้อมูลล่าง */
-        align-items: center;    /* จัดให้อยู่ตรงกลางของ Popup */
+        flex-direction: column;
+        /* รูปบน ข้อมูลล่าง */
+        align-items: center;
+        /* จัดให้อยู่ตรงกลางของ Popup */
         gap: 10px;
-        
+
         /* กำหนดขนาดที่แน่นอนและเล็กเพื่อไม่ให้ทับจอมากเกินไป */
-        width: 180px; 
-        height: auto; 
-        
+        width: 180px;
+        height: auto;
+
         /* เพิ่มพื้นหลังและขอบเพื่อให้มองเห็นชัดเจน */
-        background: none; 
+        background: none;
         backdrop-filter: blur(8px);
         border-radius: 15px;
         padding: 10px;
@@ -764,7 +784,7 @@ body>#memberPopup {
         opacity: 0;
         transform: translateY(20px) scale(0.9);
     }
-    
+
     /* แสดง popup สไลด์ขึ้น */
     .member-popup.show {
         opacity: 1;
@@ -778,35 +798,39 @@ body>#memberPopup {
         pointer-events: none;
         transform: translateY(20px) scale(0.9);
     }
-    
+
     /* รูปภาพใน Popup ข้อมูล */
     .member-popup img {
         /* กว้างเต็มพื้นที่ของ member-popup */
         height: 100%;
         width: 100%;
         max-width: 200px;
-        max-height: 250px; /* จำกัดความสูงของรูปเต็มตัว */
-        border-radius: 10px; 
+        max-height: 250px;
+        /* จำกัดความสูงของรูปเต็มตัว */
+        border-radius: 10px;
         object-fit: cover;
     }
-    
+
     /* กล่องข้อมูลใต้รูป */
     .popup-info {
         margin-left: 0;
         text-align: center;
         width: 100%;
     }
-    
+
     /* ปรับขนาดตัวอักษรใน popup-info */
     .popup-info h3,
     .popup-info p {
         margin: 0;
         margin-left: 0;
         text-align: center;
-        font-size: 0.75rem; /* ลดขนาดตัวอักษรลงมากเพื่อให้ข้อความยาวๆ ไม่ล้น */
+        font-size: 0.75rem;
+        /* ลดขนาดตัวอักษรลงมากเพื่อให้ข้อความยาวๆ ไม่ล้น */
         line-height: 1.3;
-        white-space: normal; /* สำคัญ: ข้อความขึ้นบรรทัดใหม่ */
-        text-shadow: none; /* ลบเงาข้อความออก */
+        white-space: normal;
+        /* สำคัญ: ข้อความขึ้นบรรทัดใหม่ */
+        text-shadow: none;
+        /* ลบเงาข้อความออก */
     }
 
     /* 4. ปรับ Back Button */

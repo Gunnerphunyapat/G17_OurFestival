@@ -2,7 +2,8 @@
 
 :root {
   --bg: #fffbf5;
-  --accent: #c49668;       /* โทนน้ำตาลอบอุ่น */
+  --accent: #c49668;
+  /* โทนน้ำตาลอบอุ่น */
   --accent-soft: #f5e1c8;
   --text: #3d3124;
   --muted: #8a7a66;
@@ -122,12 +123,10 @@ body.booth-page {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 251, 245, 0.94) 0%,
-    rgba(255, 251, 245, 0.9) 44%,
-    rgba(255, 251, 245, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 251, 245, 0.94) 0%,
+      rgba(255, 251, 245, 0.9) 44%,
+      rgba(255, 251, 245, 0.1) 100%);
 }
 
 .hero-text {

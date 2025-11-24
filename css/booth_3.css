@@ -22,12 +22,10 @@
 
 body {
   font-family: "Prompt", system-ui, -apple-system, sans-serif;
-  background: radial-gradient(
-    circle at top left,
-    #ffe9f5 0,
-    #fff7fb 45%,
-    #ffe2f0 100%
-  );
+  background: radial-gradient(circle at top left,
+      #ffe9f5 0,
+      #fff7fb 45%,
+      #ffe2f0 100%);
   color: var(--text);
   line-height: 1.7;
 }
@@ -152,12 +150,10 @@ main {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 240, 248, 0.96) 0%,
-    rgba(255, 240, 248, 0.94) 35%,
-    transparent 68%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 240, 248, 0.96) 0%,
+      rgba(255, 240, 248, 0.94) 35%,
+      transparent 68%);
 }
 
 .hero-text {
