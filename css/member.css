@@ -1,0 +1,421 @@
+:root {
+    --stage-size: 720px;
+    --member-size: 150px;
+    --radius: 390px;
+    --bg: #0b0b0b;
+    --mini-size: 120px;
+    --mini-radius: 55px;
+    --anim-fast: .45s ease;
+    --anim-slow: 0.3s cubic-bezier(.22, 1, .36, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-image: url('../resources/member/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Inter, system-ui;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* ------------------------------- */
+/* วงล้อใหญ่ */
+.stage {
+    position: relative;
+    width: var(--stage-size);
+    height: var(--stage-size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: width var(--anim-slow), height var(--anim-slow), transform var(--anim-slow);
+    transform-origin: center;
+    z-index: 1;
+}
+
+/* วงเส้นประรอบ stage */
+.stage .ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, .15);
+    z-index: 5000;
+
+}
+
+
+
+/* รูปกลางตรงกลางวง ขนาดคงที่ ไม่ย่อ */
+.stage>img.center-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, .25);
+    pointer-events: none;
+    z-index: 5000;
+    transition: width var(--anim-slow), height var(--anim-slow);
+    /* <-- เพิ่มตรงนี้ */
+}
+
+/* โหมดย่อไปมุมซ้ายบน */
+.stage.compact {
+    width: var(--mini-size);
+    height: var(--mini-size);
+
+    position: absolute;
+    /* เดิม relative → absolute จะอนิเมตได้ */
+
+    transform:
+        translate(-40vw, 30vh)
+        /* ตำแหน่งไปซ้าย */
+        scale(.4);
+    /* ย่อ */
+
+    opacity: .9;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.stage.compact>img.center-img {
+    width: 100%;
+    /* ขนาดเท่าเดิม */
+    height: 100%;
+    /* ขนาดเท่าเดิม */
+}
+
+/* เส้นประยังอยู่แม้ย่อ */
+.stage.compact .ring {
+    border-width: 2px;
+    /* ปรับได้ */
+}
+
+.stage.compact::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* node รอบวง */
+.node {
+    --angle: 0deg;
+    position: absolute;
+    width: var(--member-size);
+    height: var(--member-size);
+    border-radius: 50%;
+    transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1*var(--angle)));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--anim-slow), opacity var(--anim-fast);
+    cursor: pointer;
+    z-index: 5000;
+}
+
+.node .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, .25);
+}
+
+.node .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* หรือ contain ตามชอบ */
+    object-position: center top;
+    /* จัดตำแหน่งภาพ */
+    display: block;
+}
+
+/* Hover effect ขยาย node */
+.node:hover {
+    transform: rotate(var(--angle)) translate(calc(var(--radius) + 20px)) rotate(calc(-1*var(--angle))) scale(1.5);
+}
+
+/* node และ center card ไม่ขวาง pointer ตอน compact */
+.stage.compact .node,
+.stage.compact #centerCard {
+    pointer-events: none;
+}
+
+/* mini wheel */
+.mini-wheel {
+    border: 3px solid rgba(255, 255, 255, .25);
+    background: var(--bg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    z-index: 30000;
+}
+
+
+.mini-wheel.show {
+    opacity: 1;
+}
+
+/* ----- POPUP ด้านขวาล่าง ----- */
+body>.member-popup {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    /* เริ่มจากล่าง */
+    transition: transform 0.5s cubic-bezier(.22, 1, .36, 1), opacity 0.5s cubic-bezier(.22, 1, .36, 1);
+    background: transparent;
+    z-index: 9999;
+}
+
+/* รูปใน popup */
+.member-popup img {
+    width: 500px;
+    height: 800px;
+    border-radius: 80px;
+    /* เอา 50% ออก */
+    border: none;
+    /* ถ้าไม่ต้องการเส้นขอบ */
+    object-fit: cover;
+    /* หรือ contain ตามต้องการ */
+
+}
+
+/* ข้อความ */
+.popup-info h3,
+.popup-info p {
+    text-align: center;
+    margin: 0;
+    margin-left: 80px;
+    color: white;
+    font-size: 0.95rem;
+    text-shadow: 5px 1px 3px rgba(0,0,0,0.5); 
+}
+
+/* แสดง popup สไลด์ขึ้น */
+.member-popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* ซ่อน popup สไลด์ลง */
+.member-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(40px) scale(0.9);
+}
+
+
+body>#memberPopup {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+}
+
+#popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 260px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: .35s ease;
+    
+}
+
+#popup.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.popup-hidden {
+    display: none;
+}
+
+
+#stage.expand-back {
+    transition: transform 0.3s ease;
+}
+
+.popup-single {
+    position: fixed;
+    padding: 8px 12px;
+    border-radius: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10000;
+}
+
+.popup-single.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.popup-single.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+
+
+/* ตำแหน่ง / style แต่ละ popup */
+
+#popupNameBox,
+#popupSurnameBox {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;               
+    text-align: center;       
+    white-space: normal;
+    font-family: 'Playfair Display', serif; 
+    font-size: 8rem; 
+    font-weight: 700; 
+
+    /* สีเงินคมชัด */
+    color: #98c7dd;
+
+    /* เงาให้ดูวาว */
+    text-shadow:
+        0 0 3px #ca2525,
+        0 0 5px #251212,
+        0 0 8px #a0a0a0;
+
+    letter-spacing: 1px; 
+    line-height: 1.2; 
+}
+
+
+#popupNameBox {
+    top: 450px;
+    background: none;
+
+}
+
+#popupSurnameBox {
+    top: 600px;
+    background: none;
+}
+
+
+#popupRoleBox {
+    top: 150px;
+    left: 50%;
+    font-size: 7.9rem;
+    transform: translateX(-50%);
+    font-family: 'Playfair Display', serif; /* ฟอนต์หรูสไตล์ชื่อเด่น */
+    font-weight: 900;     /* ตัวหนาเด่น */
+    background: none;
+    border-bottom: 3px solid #FFD700; /* ขีดใต้สวย ๆ */
+    text-shadow: 4px 2px 5px rgba(0,0,0,0.5); /* เงานุ่มเด่น */
+    letter-spacing: 1px;  /* เพิ่มระยะตัวอักษรเล็กน้อย */
+    line-height: 1.2;     /* จัดแนวให้สวย */
+    z-index: 10000;       /* อยู่เหนือ popup อื่น */
+    text-align: center;   /* จัดตรงกลาง */
+}
+
+#popupRoleBox.role-PM { color: #ff9900; border-color: #FFD700; }        /* Project Manager – ทอง */
+#popupRoleBox.role-PO { color: #f3529d; border-color: #e897eb; }        /* Product Owner – น้ำเงิน */
+#popupRoleBox.role-TL { color: #b122aa; border-color: #e159f3; }        /* Team Lead – เขียว */
+#popupRoleBox.role-QA { color: #af20d3; border-color: #be6adf; }        /* QA Team – ชมพู */
+#popupRoleBox.role-SM { color: #3457cc; border-color: #74c3e2; }        /* Scrum Master – ส้มเข้ม */
+#popupRoleBox.role-DEV{ color: #509fe9; border-color: #00CED1; }        /* Developer – ฟ้าอมเขียว */
+#popupRoleBox.role-SA { color: #3aa0b3; border-color: #7cd6c7; }        /* Soft. Architect – ม่วง */
+#popupRoleBox.role-UXUI { color: #2e8548; border-color: #5ddf8f; }      /* UX/UI Designer – แดงส้ม */
+#popupRoleBox.role-TESTER { color: #ADFF2F; border-color: #a9e254; }    /* Testers – เขียวอ่อน */
+#popupRoleBox.role-BA { color: #f0ed3f; border-color: #dbf36e; }        /* Bus. Analyst – น้ำเงินสด */
+
+#popupDataBox {
+    top: 350px;
+    left: 48%;
+    transform: translateX(-52%);
+    font-size: 1.25rem;
+    font-family: Verdana, sans-serif;
+    color: #FFFFFF;
+    background: none;
+    text-align: center;
+    text-shadow: 5px 1px 3px rgba(0,0,0,0.5); 
+
+}
+
+#popupImgBox {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    padding: 0;
+}
+
+#popupImgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Overlay เต็มหน้าจอ */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        to bottom left,                /* ไล่สีจากมุมขวาบนไปมุมล่างซ้าย */
+        rgba(0, 0, 0, 0.95) 0%,       /* ขวามือมืดสุด */
+        rgba(0, 0, 0, 0.6) 50%,       /* กลางค่อย ๆ สว่าง */
+        rgba(0, 0, 0, 0.0) 100%       /* มุมล่างโปร่งสุด */
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9998;
+}
+
+
+
+#overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.node.active {
+    box-shadow: 0 0 25px 10px rgba(255, 215, 0, 0.9);
+    transform: scale(1.3) !important;
+    z-index: 100000;
+    transition: 0.3s ease;
+}
