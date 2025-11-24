@@ -58,7 +58,7 @@ header {
   color: #4b5d37;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -193,6 +193,7 @@ footer {
   text-align: center;
   border-top: 1px solid rgba(0, 0, 0, .06);
 }
+
 
 
 @media (max-width: 520px) {
