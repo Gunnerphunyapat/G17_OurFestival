@@ -28,8 +28,6 @@ body {
     var(--bg);
 }
 
-/* ============ HEADER / NAVBAR ============ */
-
 .site-header {
   position: sticky;
   top: 0;
@@ -88,8 +86,6 @@ body {
 .nav-links a:hover::after {
   width: 100%;
 }
-
-/* ============ HERO ============ */
 
 .hero {
   max-width: 1100px;
@@ -151,7 +147,6 @@ body {
   color: #555;
 }
 
-/* ============ PRODUCTS SECTION ============ */
 
 .products {
   max-width: 1100px;
@@ -178,7 +173,6 @@ body {
   color: var(--muted);
 }
 
-/* grid การ์ด */
 
 .product-list {
   display: flex;
@@ -187,7 +181,6 @@ body {
   gap: 26px;
 }
 
-/* ============ PRODUCT CARD ============ */
 
 .product-card {
   background-color: var(--card);
@@ -264,7 +257,7 @@ body {
   z-index: 1;
 }
 
-/* ปุ่ม */
+
 
 .btn-buy {
   margin-top: auto;
@@ -291,8 +284,6 @@ body {
   filter: brightness(1.04);
 }
 
-/* Badge best seller */
-
 .badge {
   position: absolute;
   top: 12px;
@@ -306,7 +297,6 @@ body {
   color: #ff6b81;
 }
 
-/* ============ CONDITION BOX ============ */
 
 .condition {
   max-width: 800px;
@@ -346,7 +336,6 @@ body {
   color: var(--accent-dark);
 }
 
-/* ============ RESPONSIVE ============ */
 
 @media (max-width: 900px) {
   .product-card {
@@ -387,7 +376,6 @@ body {
     border-radius: 22px;
   }
 }
-/* ============ ORDER MODAL ============ */
 
 .order-backdrop {
   position: fixed;
@@ -430,7 +418,7 @@ body {
   align-items: baseline;
   justify-content: space-between;
   gap: 10px;
-  padding-left: 22px; /* กันไม่ให้ชนปุ่ม X */
+  padding-left: 22px;
   margin-bottom: 8px;
 }
 
@@ -489,8 +477,6 @@ body {
   font-size: 14px;
   resize: vertical;
 }
-
-/* footer ของ modal */
 
 .order-footer {
   display: flex;

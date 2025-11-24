@@ -278,13 +278,6 @@
     const qty = parseInt(qtyEl.textContent, 10) || 1;
     let total = currentBasePrice;
 
-    // packaging
-    const packaging = orderForm.querySelector('input[name="packaging"]:checked');
-    if (packaging) {
-      const extra = Number(packaging.dataset.extra || 0);
-      total += extra;
-    }
-
     // toppings (เลือกได้หลายอัน)
     const toppings = orderForm.querySelectorAll('input[name="topping"]:checked');
     toppings.forEach((t) => {

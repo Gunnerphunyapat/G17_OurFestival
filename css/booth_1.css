@@ -32,12 +32,12 @@ body {
   line-height: 1.7;
 }
 
-/* ให้เนื้อหาไม่โดน header ทับ */
+
 main {
   padding-top: 88px;
 }
 
-/* =============== NAVBAR =============== */
+
 
 .site-header {
   position: fixed;
@@ -126,8 +126,6 @@ main {
   }
 }
 
-/* =============== HERO =============== */
-
 .hero {
   width: min(1100px, 92%);
   margin: 22px auto 32px;
@@ -200,8 +198,6 @@ main {
   }
 }
 
-/* =============== MENU HEADER =============== */
-
 .menu-header {
   width: min(1100px, 92%);
   margin: 0 auto 28px;
@@ -229,7 +225,6 @@ main {
   color: var(--muted);
 }
 
-/* =============== PRICING SECTION =============== */
 
 .pricing {
   width: min(1100px, 92%);
@@ -326,8 +321,6 @@ main {
   }
 }
 
-/* =============== PRODUCT GROUPS & CARDS =============== */
-
 .product-group {
   width: min(1100px, 92%);
   margin: 32px auto 8px;
@@ -385,7 +378,6 @@ main {
   color: var(--muted);
 }
 
-/* ปุ่มเพิ่มเข้าตะกร้า */
 
 .btn-buy {
   margin: 0 16px 16px;
@@ -412,5 +404,181 @@ main {
 @media (max-width: 640px) {
   main {
     padding-top: 96px;
+  }
+}
+
+
+.mochi-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.mochi-backdrop.show {
+  display: flex;
+}
+
+.mochi-modal {
+  width: min(520px, 92%);
+  max-height: 90vh;
+  background: #fffaf3;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.18);
+  padding: 22px 22px 18px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.mochi-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.mochi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mochi-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #5a3b26;
+}
+
+.mochi-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #b57039;
+}
+
+.mochi-section {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.mochi-section:last-of-type {
+  border-bottom: none;
+}
+
+.mochi-section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.mochi-section h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5a3b26;
+}
+
+.mochi-section-top span {
+  font-size: 0.85rem;
+  color: #9b8570;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 2px;
+  font-size: 0.95rem;
+  color: #5a4634;
+}
+
+.option-row input[type="radio"],
+.option-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.mochi-section textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 8px 10px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* footer */
+.mochi-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 4px 10px;
+}
+
+.qty-control button {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+.qty-control span {
+  min-width: 20px;
+  text-align: center;
+}
+
+.mochi-submit {
+  flex: 1;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: linear-gradient(135deg, #d49d68, #b8743d);
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(183,116,61,.35);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.mochi-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(183,116,61,.45);
+}
+
+.limit-hint {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #9b8570;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .mochi-modal {
+    border-radius: 18px;
+    padding: 18px 16px 14px;
   }
 }
