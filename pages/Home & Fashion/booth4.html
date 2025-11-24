@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Booth 4 · Crafted by Heart</title>
 
-  <!-- CSS ของบูธ 4 -->
+
   <link rel="stylesheet" href="../../css/booth_4.css" />
 </head>
 
 <body class="booth-page">
 
-  <!-- HEADER / NAVBAR (เหมือนบูธ 2) -->
+  <!-- HEADER / NAVBAR  -->
   <header class="site-header">
     <div class="nav-inner">
       <div class="brand">
-        <div class="brand-title">Our Festival</div>
-        <div class="brand-subtitle">Crafted by Heart</div>
+        <div class="brand-title"> Crafted by Heart</div>
+        <div class="brand-subtitle"> Handmade Accessories with Love </div>
       </div>
 
       <nav class="nav-links">
@@ -30,7 +30,7 @@
 
   <main>
 
-    <!-- HERO แบบบูธ 2 -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <img
@@ -198,10 +198,10 @@
   </main>
 
   <footer class="main-footer">
-    <p>&copy; Tu Pop Market · Booth 4: Crafted by Heart</p>
+    <p>&copy; 2025 TU Pop Market · Booth 4: Crafted by Heart </p>
   </footer>
 
-
+  <!-- MODAL-->
   <div class="order-backdrop" id="orderBackdrop">
     <div class="order-modal">
       <button class="order-close" id="orderClose">&times;</button>
@@ -214,7 +214,7 @@
       </div>
 
       <form id="orderForm">
-    
+        <!-- จำนวนชิ้น -->
         <div class="order-section">
           <h3>จำนวนชิ้น</h3>
           <div class="qty-control">
@@ -224,7 +224,7 @@
           </div>
         </div>
 
-   
+        <!-- หมายเหตุ -->
         <div class="order-section">
           <h3>หมายเหตุถึงร้าน (ไม่บังคับ)</h3>
           <textarea
@@ -234,7 +234,7 @@
           ></textarea>
         </div>
 
-
+        <!-- ปุ่มยืนยัน + ราคารวม -->
         <div class="order-footer">
           <button type="submit" class="order-submit">
             เพิ่มลงตะกร้า · ฿<span id="orderTotalPrice">0</span>
@@ -244,7 +244,7 @@
     </div>
   </div>
 
-
+  <!-- JS คุม Modal & ราคารวม -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const backdrop = document.getElementById("orderBackdrop");
@@ -259,13 +259,14 @@
 
       let currentBasePrice = 0;
 
-
+      // คำนวณราคารวม = base * qty
       function updateTotalPrice() {
         const qty = parseInt(qtyEl.textContent, 10) || 1;
         const total = currentBasePrice * qty;
         totalPriceEl.textContent = total;
       }
 
+      // เปิด modal เมื่อกด "เลือกซื้อ"
       document.querySelectorAll(".btn-buy").forEach((btn) => {
         btn.addEventListener("click", () => {
           const itemName = btn.dataset.item || "สินค้า";
@@ -275,7 +276,7 @@
           basePriceEl.textContent = price;
           currentBasePrice = price;
 
-
+          // reset form + qty
           orderForm.reset();
           qtyEl.textContent = "1";
           updateTotalPrice();
@@ -284,6 +285,7 @@
         });
       });
 
+      // ปิด modal
       function closeModal() {
         backdrop.classList.remove("show");
       }
@@ -293,6 +295,7 @@
         if (e.target === backdrop) closeModal();
       });
 
+      // เปลี่ยนจำนวน
       qtyMinus.addEventListener("click", () => {
         let qty = parseInt(qtyEl.textContent, 10) || 1;
         if (qty > 1) {
@@ -309,10 +312,10 @@
         updateTotalPrice();
       });
 
-
+      // submit = แค่แจ้งเตือนตัวอย่าง
       orderForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("เพิ่มลงตะกร้าเรียบร้อย!🎀");
+        alert("เพิ่มลงตะกร้าเรียบร้อย (ตัวอย่าง) 🎀");
         closeModal();
       });
     });

@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CaoCoLow Bakery</title>
-
-  <!-- ฟอนต์ Prompt เหมือนบูธ 2 -->
   <link
     href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap"
     rel="stylesheet"
@@ -36,7 +34,7 @@
 
   <main>
 
-    <!-- HERO (การ์ดด้านบน) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <img
@@ -58,7 +56,7 @@
       </div>
     </section>
 
-    <!-- หัวข้อเมนูหลัก -->
+    <!-- MENU HEADER -->
     <section class="menu-header">
       <p class="menu-label">BOOTH 3 · BAKERY MENU</p>
       <h2 class="menu-title">CAOCOLOW BAKERY</h2>
@@ -67,7 +65,7 @@
       </p>
     </section>
 
-    <!-- PRODUCT GROUP: Cookies & Bakery -->
+]
     <section class="product-group">
       <h3 class="group-title">Cookies &amp; Pastries</h3>
       <p class="group-subtitle">ทุกชิ้นอบสดใหม่ หอมเนย หวานละมุนกำลังดี</p>
@@ -81,7 +79,13 @@
           <p>คุกกี้เนื้อนุ่ม หอมวนิลาละมุน ละลายในปากทุกคำ</p>
           <div class="item-bottom">
             <span class="price">฿35</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="ซอฟคุกกี้วนิลา"
+              data-price="35"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -92,7 +96,13 @@
           <p>หอมมัทฉะเข้มข้น หวานน้อย สำหรับคนรักชาเขียวตัวจริง</p>
           <div class="item-bottom">
             <span class="price">฿35</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="คุกกี้ชาเขียวมัทฉะ"
+              data-price="35"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -103,7 +113,13 @@
           <p>ซอฟคุกกี้ผสมโอริโอ้ กรอบนุ่ม หอมหวานเคี้ยวเพลิน</p>
           <div class="item-bottom">
             <span class="price">฿35</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="คุกกี้โอริโอ้"
+              data-price="35"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -114,7 +130,13 @@
           <p>ช็อกโกแลตเข้มข้น ตัดกับความหวานฉ่ำของสตรอเบอรี่</p>
           <div class="item-bottom">
             <span class="price">฿50</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="คุกกี้ช็อกโกแลตสตรอเบอรี่"
+              data-price="50"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -125,7 +147,13 @@
           <p>ชีสเค้กเนื้อนุ่ม หอมชีส ราดซอสสตรอเบอรี่เปรี้ยวหวาน</p>
           <div class="item-bottom">
             <span class="price">฿60</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="ชีสเค้กสตรอเบอรี่"
+              data-price="60"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -136,7 +164,13 @@
           <p>เค้กช็อกโกแลตเข้มข้น หน้านิ่มละมุน เอาใจสายดาร์กช็อก</p>
           <div class="item-bottom">
             <span class="price">฿50</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="เค้กช็อกโกแลตหน้านิ่ม"
+              data-price="50"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -145,5 +179,127 @@
 
   </main>
 
+  <footer class="main-footer">
+    <p>&copy; 2025 TU Pop Market · Booth 3: CaoCoLow Bakery</p>
+  </footer>
+
+  <div class="order-backdrop" id="orderBackdrop">
+    <div class="order-modal">
+      <button class="order-close" id="orderClose">&times;</button>
+
+      <div class="order-header">
+        <h2 id="orderItemName">สินค้า</h2>
+        <span class="order-price">
+          ฿<span id="orderBasePrice">0</span>
+        </span>
+      </div>
+
+      <form id="orderForm">
+
+        <div class="order-section">
+          <h3>จำนวนชิ้น</h3>
+          <div class="qty-control">
+            <button type="button" id="qtyMinus">−</button>
+            <span id="orderQty">1</span>
+            <button type="button" id="qtyPlus">+</button>
+          </div>
+        </div>
+
+   
+        <div class="order-section">
+          <h3>หมายเหตุถึงร้าน (ไม่บังคับ)</h3>
+          <textarea
+            name="note"
+            rows="2"
+            placeholder="เช่น ขอแพ็คเป็นของขวัญ, แยกกล่อง ฯลฯ"
+          ></textarea>
+        </div>
+
+       
+        <div class="order-footer">
+          <button type="submit" class="order-submit">
+            เพิ่มลงตะกร้า · ฿<span id="orderTotalPrice">0</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const backdrop = document.getElementById("orderBackdrop");
+      const closeBtn = document.getElementById("orderClose");
+      const itemNameEl = document.getElementById("orderItemName");
+      const basePriceEl = document.getElementById("orderBasePrice");
+      const totalPriceEl = document.getElementById("orderTotalPrice");
+      const qtyEl = document.getElementById("orderQty");
+      const qtyMinus = document.getElementById("qtyMinus");
+      const qtyPlus = document.getElementById("qtyPlus");
+      const orderForm = document.getElementById("orderForm");
+
+      let currentBasePrice = 0;
+
+      function updateTotalPrice() {
+        const qty = parseInt(qtyEl.textContent, 10) || 1;
+        const total = currentBasePrice * qty;
+        totalPriceEl.textContent = total;
+      }
+
+
+      document.querySelectorAll(".btn-buy").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const itemName = btn.dataset.item || "สินค้า";
+          const price = Number(btn.dataset.price || 0);
+
+          itemNameEl.textContent = itemName;
+          basePriceEl.textContent = price;
+          currentBasePrice = price;
+
+          orderForm.reset();
+          qtyEl.textContent = "1";
+          updateTotalPrice();
+
+          backdrop.classList.add("show");
+        });
+      });
+
+
+      function closeModal() {
+        backdrop.classList.remove("show");
+      }
+
+      closeBtn.addEventListener("click", closeModal);
+      backdrop.addEventListener("click", (e) => {
+        if (e.target === backdrop) closeModal();
+      });
+
+          
+      qtyMinus.addEventListener("click", () => {
+        let qty = parseInt(qtyEl.textContent, 10) || 1;
+        if (qty > 1) {
+          qty--;
+          qtyEl.textContent = qty;
+          updateTotalPrice();
+        }
+      });
+
+      qtyPlus.addEventListener("click", () => {
+        let qty = parseInt(qtyEl.textContent, 10) || 1;
+        qty++;
+        qtyEl.textContent = qty;
+        updateTotalPrice();
+      });
+
+      
+      orderForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("เพิ่มลงตะกร้าเรียบร้อย!");
+        closeModal();
+      });
+    });
+  </script>
 </body>
+
 </html>
