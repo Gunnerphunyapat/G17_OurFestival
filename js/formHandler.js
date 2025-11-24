@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("registerForm"); 
+    const form = document.getElementById("registerForm");
 
     if (form) {
         form.addEventListener("submit", function (e) {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             localStorage.setItem("registeredUsers", JSON.stringify(users));
 
-            
+
             window.location.href = "register_summary.html";
         });
     }

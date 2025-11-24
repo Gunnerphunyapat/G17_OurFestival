@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
       const message = document.getElementById("Feedback message").value.trim();
       const rating = document.getElementById("rating").value;
 
-    
+
       if (!name || !rating) {
         alert("กรุณากรอกชื่อและเลือกคะแนนประเมิน");
         return;
       }
 
-    
+
       const feedbacks = JSON.parse(localStorage.getItem("feedbackData")) || [];
 
-      
+
       feedbacks.push({
         name,
         message: message || "(No feedback message)",
@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("บันทึกความคิดเห็นเรียบร้อยแล้ว!");
       feedbackForm.reset();
 
-     
+
       window.location.href = "feedback_summary.html";
     });
   }
 
-  
+
   const summaryDiv = document.getElementById("feedbackSummary");
   if (summaryDiv) {
     const feedbacks = JSON.parse(localStorage.getItem("feedbackData")) || [];
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const avg =
       feedbacks.reduce((sum, f) => sum + Number(f.rating), 0) / feedbacks.length;
 
-   
+
 
     let html = `
       <h5 class="text-center mb-3">Average Rating: ⭐ ${avg.toFixed(1)}</h5>
@@ -86,4 +86,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
- // localStorage.clear();  เอาไว้ล้าง ประวัติ feedback
+// localStorage.clear();  เอาไว้ล้าง ประวัติ feedback

@@ -41,19 +41,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         popupRoleBox.className = "popup-single show";
 
-    // เพิ่ม class ตามตำแหน่งบทบาท
-    switch(node.dataset.title) {
-        case 'Project Manager': popupRoleBox.classList.add('role-PM'); break;
-        case 'Product Owner':   popupRoleBox.classList.add('role-PO'); break;
-        case 'Team Lead':       popupRoleBox.classList.add('role-TL'); break;
-        case 'QA Team':         popupRoleBox.classList.add('role-QA'); break;
-        case 'Scrum Master':    popupRoleBox.classList.add('role-SM'); break;
-        case 'Developer':       popupRoleBox.classList.add('role-DEV'); break;
-        case 'Soft. Architect': popupRoleBox.classList.add('role-SA'); break;
-        case 'UX/UI Designer':  popupRoleBox.classList.add('role-UXUI'); break;
-        case 'Testers':         popupRoleBox.classList.add('role-TESTER'); break;
-        case 'Bus. Analyst':    popupRoleBox.classList.add('role-BA'); break;
-    }
+        // เพิ่ม class ตามตำแหน่งบทบาท
+        switch (node.dataset.title) {
+            case 'Project Manager': popupRoleBox.classList.add('role-PM'); break;
+            case 'Product Owner': popupRoleBox.classList.add('role-PO'); break;
+            case 'Team Lead': popupRoleBox.classList.add('role-TL'); break;
+            case 'QA Team': popupRoleBox.classList.add('role-QA'); break;
+            case 'Scrum Master': popupRoleBox.classList.add('role-SM'); break;
+            case 'Developer': popupRoleBox.classList.add('role-DEV'); break;
+            case 'Soft. Architect': popupRoleBox.classList.add('role-SA'); break;
+            case 'UX/UI Designer': popupRoleBox.classList.add('role-UXUI'); break;
+            case 'Testers': popupRoleBox.classList.add('role-TESTER'); break;
+            case 'Bus. Analyst': popupRoleBox.classList.add('role-BA'); break;
+        }
 
         [popupNameBox, popupSurnameBox, popupRoleBox, popupDataBox, popupImgBox].forEach(p => {
             p.classList.remove("hidden");
