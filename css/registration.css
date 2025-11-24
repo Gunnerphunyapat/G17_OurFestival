@@ -65,3 +65,30 @@ body {
     background: rgba(255, 255, 255, 0.25);
     transform: translateX(-3px);
 }
+
+@media (max-width: 768px) {
+    .nav-inner {
+        flex-direction: column; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+        text-align: center;
+        gap: 10px;
+    }
+    .nav-links {
+        justify-content: center;
+        /* ถ้าเป็น flexbox */
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        /* สมมติว่าใช้ Grid Template Columns */
+        grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์ */
+        gap: 20px;
+    }
+}
+
+/* สำหรับ Mobile Phone */
+@media (max-width: 520px) {
+    .product-list {
+        grid-template-columns: 1fr; /* 1 คอลัมน์เต็มจอ */
+    }
+}
