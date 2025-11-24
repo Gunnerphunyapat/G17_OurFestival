@@ -15,12 +15,13 @@
     padding: 0
 }
 
+
 body {
     background-image: url('../resources/member/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-family: Inter, system-ui;
+    font-family: "Kanit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -28,6 +29,28 @@ body {
     color: white;
     overflow: hidden;
 }
+
+.back-button {
+    position: fixed;
+    font-family: "Kanit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    top: 20px;
+    left: 20px;
+    padding: 10px 18px;
+    background: rgba(204, 185, 185, 0.6);
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+    z-index: 1;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(-3px);
+}
+
 
 
 /* ------------------------------- */
@@ -210,11 +233,12 @@ body>.member-popup {
 .popup-info h3,
 .popup-info p {
     text-align: center;
+    font-family: "Kanit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     margin: 0;
     margin-left: 80px;
     color: white;
     font-size: 0.95rem;
-    text-shadow: 5px 1px 3px rgba(0,0,0,0.5); 
+    text-shadow: 5px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* แสดง popup สไลด์ขึ้น */
@@ -252,7 +276,7 @@ body>#memberPopup {
     pointer-events: none;
     transform: translateY(20px);
     transition: .35s ease;
-    
+
 }
 
 #popup.show {
@@ -301,12 +325,12 @@ body>#memberPopup {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;               
-    text-align: center;       
+    width: 60%;
+    text-align: center;
     white-space: normal;
-    font-family: 'Playfair Display', serif; 
-    font-size: 8rem; 
-    font-weight: 700; 
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    font-weight: 700;
 
     /* สีเงินคมชัด */
     color: #98c7dd;
@@ -317,8 +341,8 @@ body>#memberPopup {
         0 0 5px #251212,
         0 0 8px #a0a0a0;
 
-    letter-spacing: 1px; 
-    line-height: 1.2; 
+    letter-spacing: 1px;
+    line-height: 1.2;
 }
 
 
@@ -337,40 +361,98 @@ body>#memberPopup {
 #popupRoleBox {
     top: 150px;
     left: 50%;
-    font-size: 7.9rem;
+    font-size: 7.3rem;
     transform: translateX(-50%);
-    font-family: 'Playfair Display', serif; /* ฟอนต์หรูสไตล์ชื่อเด่น */
-    font-weight: 900;     /* ตัวหนาเด่น */
+    font-family: 'Playfair Display', serif;
+    /* ฟอนต์หรูสไตล์ชื่อเด่น */
+    font-weight: 900;
+    /* ตัวหนาเด่น */
     background: none;
-    border-bottom: 3px solid #FFD700; /* ขีดใต้สวย ๆ */
-    text-shadow: 4px 2px 5px rgba(0,0,0,0.5); /* เงานุ่มเด่น */
-    letter-spacing: 1px;  /* เพิ่มระยะตัวอักษรเล็กน้อย */
-    line-height: 1.2;     /* จัดแนวให้สวย */
-    z-index: 10000;       /* อยู่เหนือ popup อื่น */
-    text-align: center;   /* จัดตรงกลาง */
+    border-bottom: 3px solid #FFD700;
+    /* ขีดใต้สวย ๆ */
+    text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.5);
+    /* เงานุ่มเด่น */
+    letter-spacing: 1px;
+    /* เพิ่มระยะตัวอักษรเล็กน้อย */
+    line-height: 1.2;
+    /* จัดแนวให้สวย */
+    z-index: 10000;
+    /* อยู่เหนือ popup อื่น */
+    text-align: center;
+    /* จัดตรงกลาง */
 }
 
-#popupRoleBox.role-PM { color: #ff9900; border-color: #FFD700; }        /* Project Manager – ทอง */
-#popupRoleBox.role-PO { color: #f3529d; border-color: #e897eb; }        /* Product Owner – น้ำเงิน */
-#popupRoleBox.role-TL { color: #b122aa; border-color: #e159f3; }        /* Team Lead – เขียว */
-#popupRoleBox.role-QA { color: #af20d3; border-color: #be6adf; }        /* QA Team – ชมพู */
-#popupRoleBox.role-SM { color: #3457cc; border-color: #74c3e2; }        /* Scrum Master – ส้มเข้ม */
-#popupRoleBox.role-DEV{ color: #509fe9; border-color: #00CED1; }        /* Developer – ฟ้าอมเขียว */
-#popupRoleBox.role-SA { color: #3aa0b3; border-color: #7cd6c7; }        /* Soft. Architect – ม่วง */
-#popupRoleBox.role-UXUI { color: #2e8548; border-color: #5ddf8f; }      /* UX/UI Designer – แดงส้ม */
-#popupRoleBox.role-TESTER { color: #ADFF2F; border-color: #a9e254; }    /* Testers – เขียวอ่อน */
-#popupRoleBox.role-BA { color: #f0ed3f; border-color: #dbf36e; }        /* Bus. Analyst – น้ำเงินสด */
+#popupRoleBox.role-PM {
+    color: #ff9900;
+    border-color: #FFD700;
+}
+
+/* Project Manager – ทอง */
+#popupRoleBox.role-PO {
+    color: #f3529d;
+    border-color: #e897eb;
+}
+
+/* Product Owner – น้ำเงิน */
+#popupRoleBox.role-TL {
+    color: #b122aa;
+    border-color: #e159f3;
+}
+
+/* Team Lead – เขียว */
+#popupRoleBox.role-QA {
+    color: #af20d3;
+    border-color: #be6adf;
+}
+
+/* QA Team – ชมพู */
+#popupRoleBox.role-SM {
+    color: #3457cc;
+    border-color: #74c3e2;
+}
+
+/* Scrum Master – ส้มเข้ม */
+#popupRoleBox.role-DEV {
+    color: #509fe9;
+    border-color: #00CED1;
+}
+
+/* Developer – ฟ้าอมเขียว */
+#popupRoleBox.role-SA {
+    color: #3aa0b3;
+    border-color: #7cd6c7;
+}
+
+/* Soft. Architect – ม่วง */
+#popupRoleBox.role-UXUI {
+    color: #2e8548;
+    border-color: #5ddf8f;
+}
+
+/* UX/UI Designer – แดงส้ม */
+#popupRoleBox.role-TESTER {
+    color: #ADFF2F;
+    border-color: #a9e254;
+}
+
+/* Testers – เขียวอ่อน */
+#popupRoleBox.role-BA {
+    color: #f0ed3f;
+    border-color: #dbf36e;
+}
+
+/* Bus. Analyst – น้ำเงินสด */
 
 #popupDataBox {
     top: 350px;
     left: 48%;
     transform: translateX(-52%);
     font-size: 1.25rem;
-    font-family: Verdana, sans-serif;
+    font-family: "Kanit", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     color: #FFFFFF;
     background: none;
     text-align: center;
-    text-shadow: 5px 1px 3px rgba(0,0,0,0.5); 
+    text-shadow: 5px 1px 3px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -394,12 +476,15 @@ body>#memberPopup {
 #overlay {
     position: fixed;
     inset: 0;
-    background: linear-gradient(
-        to bottom left,                /* ไล่สีจากมุมขวาบนไปมุมล่างซ้าย */
-        rgba(0, 0, 0, 0.95) 0%,       /* ขวามือมืดสุด */
-        rgba(0, 0, 0, 0.6) 50%,       /* กลางค่อย ๆ สว่าง */
-        rgba(0, 0, 0, 0.0) 100%       /* มุมล่างโปร่งสุด */
-    );
+    background: linear-gradient(to bottom left,
+            /* ไล่สีจากมุมขวาบนไปมุมล่างซ้าย */
+            rgba(0, 0, 0, 0.95) 0%,
+            /* ขวามือมืดสุด */
+            rgba(0, 0, 0, 0.6) 50%,
+            /* กลางค่อย ๆ สว่าง */
+            rgba(0, 0, 0, 0.0) 100%
+            /* มุมล่างโปร่งสุด */
+        );
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;

@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="register" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&family=Playfair+Display:wght@400;700;900&display=swap"
+        rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -15,60 +18,65 @@
 
 <body>
 
-    <head class="header-bar">
-        <div class="logo-section">
-            <img src="../resources/register/Screenshot_2025-10-22_101624-removebg-preview.png" alt="">
-            <span class="logo-text">Smoothei Shop</span>
+    <a href="../index.html" class="back-button">← กลับหน้าแรก</a>
+
+    <header class="header-bar">
+        <div class="logo-wrapper">
+
+            <span class="logo-text">THAMMASAT FAIR</span>
+
         </div>
-    </head>
+    </header>
+    <div class="main-container">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 mb-6">
+                    <div class="card rounded-4 border-0 shadow-lg mb-5 vstack gap-2">
+                        <div class="card-body">
+                            <h1 class="m-3">REGISTER</h1>
 
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-12 mb-6">
-                <div class="card rounded-4 border-0 shadow-lg mb-5 vstack gap-2">
-                    <div class="card-body">
-                        <h1 class="m-3">REGISTER</h1>
-
-                        <form id="registerForm">
-                            <div class="m-3">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter your name"
-                                        required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="surname" class="form-label">Surname</label>
-                                    <input type="text" class="form-control" id="surname"
-                                        placeholder="Enter your surname" required>
-                                </div>
-                                <div class="mb-2">
-                                    <label class="form-label">Gender</label>
-                                </div>
+                            <form id="registerForm">
+                                <div class="m-3">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="surname" class="form-label">Surname</label>
+                                        <input type="text" class="form-control" id="surname"
+                                            placeholder="Enter your surname" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label class="form-label">Gender</label>
+                                    </div>
 
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
-                                    <label class="form-check-label" for="male">Male</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="male"
+                                            value="Male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                            value="Female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="emailaddress" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="emailaddress"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                            placeholder="example@example.com" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phonenumber" class="form-label">Phone number</label>
+                                        <input type="tel" class="form-control" id="phonenumber" pattern="[0-9]{10,10}"
+                                            placeholder="xxx-xxx-xxxx" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
-                                <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="gender" id="female"
-                                        value="Female">
-                                    <label class="form-check-label" for="female">Female</label>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="emailaddress" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="emailaddress"
-                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-                                        placeholder="example@example.com" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phonenumber" class="form-label">Phone number</label>
-                                    <input type="tel" class="form-control" id="phonenumber" pattern="[0-9]{10,10}"
-                                        placeholder="xxx-xxx-xxxx" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
