@@ -1,3 +1,4 @@
+/* ================= THEME VARIABLES ================= */
 
 :root {
   --bg: #F7F6EB;
@@ -12,7 +13,7 @@
 /* ================= GLOBAL ================= */
 html {
   scroll-behavior: smooth;
-}
+  }
 
 * {
   box-sizing: border-box;
@@ -293,10 +294,12 @@ header {
   color: #4b5d37;
   text-decoration: none;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.25rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+
+/* ใช้ table เดิม แต่สไตล์ให้หน้าตาเหมือน nav-links ในธีมใหม่ */
 
 .nav-links {
   width: 100%;
@@ -326,6 +329,7 @@ header {
   background: #0000000a;
 }
 
+/* ================= STORES BUTTON ================= */
 
 .indexchoose {
   width: min(1100px, 92%);
@@ -367,9 +371,9 @@ header {
 }
 
 /* เผื่ออยากใช้ class นี้ต่อทีหลัง */
-.indexstores {}
+/* .indexstores {} */
 
-
+/* ================= HERO ================= */
 
 .hero {
   width: min(1100px, 92%);
@@ -387,6 +391,7 @@ header {
   box-shadow: var(--shadow);
 }
 
+/* title บนรูป ให้อ่านง่ายแต่มินิมอล */
 
 .shop-title {
   position: absolute;
@@ -403,7 +408,7 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, .35);
 }
 
-
+/* แท็กย่อยด้านล่างรูป */
 
 .hero-subtitle {
   position: absolute;
@@ -419,6 +424,7 @@ header {
   border: 1px solid rgba(0, 0, 0, .06);
 }
 
+/* ================= FOOTER ================= */
 
 footer {
   width: min(1100px, 92%);
@@ -429,7 +435,7 @@ footer {
   border-top: 1px solid rgba(0, 0, 0, .06);
 }
 
-
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 520px) {
   .navbar {

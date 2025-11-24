@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CaoCoLow Bakery</title>
-
-  <!-- ฟอนต์ Prompt เหมือนบูธ 2 -->
   <link
     href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap"
     rel="stylesheet"
@@ -17,55 +15,12 @@
 
 <body>
 
-  <header>
-    <div class="header-content">
-      <div class="site-title">
-        <h2>🍪 Caocolow Bakery 🍪</h2>
-      </div>
-      <div class="sitetitle">
-        <p>Fresh baked cookies & pastries made with love</p>
-      </div>
-    </div>
-    <div class="list">
-      <p class="list-button"><a href="../../index.html">หน้าแรก</a></p>
-      <p class="list-button"><a href="../linkshop.html">รายชื่อร้านค้า</a></p>
-      <p class="list-button"><a href="../registration.html">ลงทะเบียน</a></p>
-      <p class="list-button"><a href="../feedback.html">ประเมิน</a></p>
-    </div>
-  </header>
-
-  <div class="banner">
-    <img src="../../resources/booth/Foods/booth3/banner.png" alt="banner picture">
-  </div>
-
-  <section class="booth-intro">
-    <h1 class="booth-heading">🍪 Caocolow Bakery 🍪</h1>
-    <p class="booth-description">
-      คุกกี้เรียบง่ายแต่ไม่ธรรมดา! กินได้ทุกคำไม่มีวันเบื่อ ไส้แน่นจัดเต็ม <br>
-      !!!ระวังกินหมดโดยไม่รู้ตัว!!!
-    </p>
-  </section>
-
-
-  <section class="products">
-    <div class="product-list">
-
-      <!-- 1 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/softcookie-vanilla.jpg" alt="ซอฟคุกกี้วนิลา">
-        <h3>ซอฟคุกกี้วนิลา</h3>
-        <p>คุกกี้เนื้อนุ่ม หอมวนิลา ละลายในปาก</p>
-        <span class="price">฿35</span>
-        <button class="btn-buy">ซื้อเลย</button>
-      </div>
-
-      <!-- 2 -->
-      <div class="product-card">
-        <img src="../../resources/booth/Foods/booth3/matcha-cookie.jpg" alt="คุกกี้ชาเขียวมัทฉะ">
-        <h3>คุกกี้ชาเขียวมัทฉะ</h3>
-        <p>หอมมัทฉะเข้มข้น หวานน้อยกำลังดี</p>
-        <span class="price">฿35</span>
-        <button class="btn-buy">ซื้อเลย</button>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-title">CaoCoLow Bakery</div>
+        <div class="brand-subtitle">Fresh baked cookies &amp; pastries</div>
       </div>
 
       <nav class="nav-links">
@@ -79,7 +34,7 @@
 
   <main>
 
-    <!-- HERO (การ์ดด้านบน) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <img
@@ -101,7 +56,7 @@
       </div>
     </section>
 
-    <!-- หัวข้อเมนูหลัก -->
+    <!-- MENU HEADER -->
     <section class="menu-header">
       <p class="menu-label">BOOTH 3 · BAKERY MENU</p>
       <h2 class="menu-title">CAOCOLOW BAKERY</h2>
@@ -110,7 +65,7 @@
       </p>
     </section>
 
-    <!-- PRODUCT GROUP: Cookies & Bakery -->
+]
     <section class="product-group">
       <h3 class="group-title">Cookies &amp; Pastries</h3>
       <p class="group-subtitle">ทุกชิ้นอบสดใหม่ หอมเนย หวานละมุนกำลังดี</p>
@@ -124,7 +79,13 @@
           <p>คุกกี้เนื้อนุ่ม หอมวนิลาละมุน ละลายในปากทุกคำ</p>
           <div class="item-bottom">
             <span class="price">฿35</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="ซอฟคุกกี้วนิลา"
+              data-price="35"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -135,7 +96,13 @@
           <p>หอมมัทฉะเข้มข้น หวานน้อย สำหรับคนรักชาเขียวตัวจริง</p>
           <div class="item-bottom">
             <span class="price">฿35</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="คุกกี้ชาเขียวมัทฉะ"
+              data-price="35"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -146,7 +113,13 @@
           <p>ซอฟคุกกี้ผสมโอริโอ้ กรอบนุ่ม หอมหวานเคี้ยวเพลิน</p>
           <div class="item-bottom">
             <span class="price">฿35</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="คุกกี้โอริโอ้"
+              data-price="35"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -157,7 +130,13 @@
           <p>ช็อกโกแลตเข้มข้น ตัดกับความหวานฉ่ำของสตรอเบอรี่</p>
           <div class="item-bottom">
             <span class="price">฿50</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="คุกกี้ช็อกโกแลตสตรอเบอรี่"
+              data-price="50"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -168,7 +147,13 @@
           <p>ชีสเค้กเนื้อนุ่ม หอมชีส ราดซอสสตรอเบอรี่เปรี้ยวหวาน</p>
           <div class="item-bottom">
             <span class="price">฿60</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="ชีสเค้กสตรอเบอรี่"
+              data-price="60"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -179,7 +164,13 @@
           <p>เค้กช็อกโกแลตเข้มข้น หน้านิ่มละมุน เอาใจสายดาร์กช็อก</p>
           <div class="item-bottom">
             <span class="price">฿50</span>
-            <button class="btn-buy">ซื้อเลย</button>
+            <button
+              class="btn-buy"
+              data-item="เค้กช็อกโกแลตหน้านิ่ม"
+              data-price="50"
+            >
+              ซื้อเลย
+            </button>
           </div>
         </article>
 
@@ -188,5 +179,55 @@
 
   </main>
 
+  <footer class="main-footer">
+    <p>&copy; 2025 TU Pop Market · Booth 3: CaoCoLow Bakery</p>
+  </footer>
+
+  <div class="order-backdrop" id="orderBackdrop">
+    <div class="order-modal">
+      <button class="order-close" id="orderClose">&times;</button>
+
+      <div class="order-header">
+        <h2 id="orderItemName">สินค้า</h2>
+        <span class="order-price">
+          ฿<span id="orderBasePrice">0</span>
+        </span>
+      </div>
+
+      <form id="orderForm">
+
+        <div class="order-section">
+          <h3>จำนวนชิ้น</h3>
+          <div class="qty-control">
+            <button type="button" id="qtyMinus">−</button>
+            <span id="orderQty">1</span>
+            <button type="button" id="qtyPlus">+</button>
+          </div>
+        </div>
+
+   
+        <div class="order-section">
+          <h3>หมายเหตุถึงร้าน (ไม่บังคับ)</h3>
+          <textarea
+            name="note"
+            rows="2"
+            placeholder="เช่น ขอแพ็คเป็นของขวัญ, แยกกล่อง ฯลฯ"
+          ></textarea>
+        </div>
+
+       
+        <div class="order-footer">
+          <button type="submit" class="order-submit">
+            เพิ่มลงตะกร้า · ฿<span id="orderTotalPrice">0</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="../../js/booth3.js"></script>
 </body>
+
 </html>
