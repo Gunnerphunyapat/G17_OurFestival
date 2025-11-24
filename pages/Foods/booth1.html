@@ -2,25 +2,86 @@
 <html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cream Cheese Mochi</title>
-    <link rel="stylesheet" href="../../css/booth_1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cream Cheese Mochi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../css/booth_1.css">
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <h2>Cream Cheese Mochi</h2>
-            <p>Mochi Mocheese</p>
+
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-title">Cream Cheese Mochi</div>
+        <div class="brand-subtitle">Mochi Mocheese</div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../../index.html">หน้าแรก</a>
+        <a href="../linkshop.html">รายชื่อร้านค้า</a>
+        <a href="../registration.html">ลงทะเบียน</a>
+        <a href="../feedback.html">ประเมิน</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+
+    <section class="hero">
+      <div class="hero-inner">
+        <img
+          src="../../resources/booth/Foods/booth1/banner.jpg"
+          alt="โมจิครีมชีสและท็อปปิ้งหลากหลาย"
+          class="hero-img"
+        />
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+          <p class="hero-kicker">Booth 1 · Cream Cheese Mochi</p>
+          <h1>Creamy Mochi For Your Sweet Day</h1>
+          <p class="hero-desc">
+            สัมผัสความละมุนเหนือระดับกับ “โมจิครีมชีสโฮมเมด”<br>
+            แป้งนุ่มหนึบ ครีมชีสละมุน เลือกท็อปปิ้งได้ตามใจ ทำเมนูโปรดของคุณเอง
+          </p>
         </div>
-        <div class="list">
-            <p class="list-button"><a href="../../index.html">หน้าแรก</a></p>
-            <p class="list-button"><a href="../linkshop.html">รายชื่อร้านค้า</a></p>
-            <p class="list-button"><a href="../registration.html">ลงทะเบียน</a></p>
-            <p class="list-button"><a href="../feedback.html">ประเมิน</a></p>
+      </div>
+    </section>
+
+    <section class="menu-header">
+      <p class="menu-label">BOOTH 1 · MOCHI MENU</p>
+      <h2 class="menu-title">CREAM CHEESE MOCHI</h2>
+      <p class="menu-subtitle">
+        เลือกครีมชีสและท็อปปิ้งที่ใช่ ผสมเป็นโมจิในสไตล์ของคุณ
+      </p>
+    </section>
+
+    <section class="pricing">
+      <div class="pricing-main-card">
+        <h3 class="pricing-title">📋 ราคาและแพ็กเกจ</h3>
+
+        <div class="pricing-main-grid">
+          <div class="pricing-main-col">
+            <h4 class="pricing-size">Size S · 49 บาท</h4>
+            <ul>
+              <li>ใส่ครีมชีสได้ 2 สกู๊ป</li>
+              <li>ใส่ท็อปปิ้งได้ 2 ตัว</li>
+            </ul>
+          </div>
+
+          <div class="pricing-main-col">
+            <h4 class="pricing-size">Size L · 79 บาท</h4>
+            <ul>
+              <li>ใส่ครีมชีสได้ 3 สกู๊ป</li>
+              <li>ใส่ท็อปปิ้งได้ 4 ตัว</li>
+            </ul>
+          </div>
         </div>
-    </header>
 
     <div class="banner">
         <img src="../../resources/booth/Foods/booth1/banner.jpg" alt="Cream Cheese Mochi Banner">
@@ -63,49 +124,40 @@
                 <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
             </div>
         </div>
+        <label class="option-row">
+          <input type="radio" name="size" value="S" data-price="49" required>
+          <span>Size S · 49 บาท &nbsp;—&nbsp; ครีมชีส 2 สกู๊ป · ท็อปปิ้ง 2 ตัว</span>
+        </label>
+        <label class="option-row">
+          <input type="radio" name="size" value="L" data-price="79">
+          <span>Size L · 79 บาท &nbsp;—&nbsp; ครีมชีส 3 สกู๊ป · ท็อปปิ้ง 4 ตัว</span>
+        </label>
+      </div>
 
-        <!-- Toppings Section -->
-        <section class="section-header">
-            <h2>Toppings</h2>
-            <p>โดยทางร้านเรามีผลไม้และขนมให้ลูกค้าเลือกใส่อยู่ 6 อย่าง</p>
-        </section>
 
-        <div class="product-list">
-            <div class="item-card">
-                <img src="../../resources/booth/Foods/booth1/toppings/strawberrys.jpg" alt="Strawberry">
-                <h3>Strawberry</h3>
-                <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
-            </div>
+      <div class="mochi-section">
+        <div class="mochi-section-top">
+          <h3>เลือกครีมชีส <span id="creamLimitText">(เลือกตามสิทธิ์ของไซส์)</span></h3>
+        </div>
 
-            <div class="item-card">
-                <img src="../../resources/booth/Foods/booth1/toppings/berrys.jpg" alt="Berry">
-                <h3>Berry</h3>
-                <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
-            </div>
+        <label class="option-row">
+          <input type="checkbox" name="cream" value="original">
+          <span>Original Cream Cheese</span>
+        </label>
+        <label class="option-row">
+          <input type="checkbox" name="cream" value="berry">
+          <span>Berry Cream Cheese</span>
+        </label>
+        <label class="option-row">
+          <input type="checkbox" name="cream" value="cookie">
+          <span>Cookie &amp; Cream Cheese</span>
+        </label>
+      </div>
 
-            <div class="item-card">
-                <img src="../../resources/booth/Foods/booth1/toppings/kiwis.jpg" alt="Kiwi">
-                <h3>Kiwi</h3>
-                <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
-            </div>
 
-            <div class="item-card">
-                <img src="../../resources/booth/Foods/booth1/toppings/oreos.jpg" alt="Oreo">
-                <h3>Oreo</h3>
-                <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
-            </div>
-
-            <div class="item-card">
-                <img src="../../resources/booth/Foods/booth1/toppings/cookies.jpg" alt="Cookie">
-                <h3>Cookie</h3>
-                <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
-            </div>
-
-            <div class="item-card">
-                <img src="../../resources/booth/Foods/booth1/toppings/brownies.jpg" alt="Brownie">
-                <h3>Brownie</h3>
-                <button class="btn-buy">เพิ่มเข้าตะกร้า</button>
-            </div>
+      <div class="mochi-section">
+        <div class="mochi-section-top">
+          <h3>เลือกท็อปปิ้ง <span id="toppingLimitText">(เลือกตามสิทธิ์ของไซส์)</span></h3>
         </div>
 
         <!-- Order Section -->
