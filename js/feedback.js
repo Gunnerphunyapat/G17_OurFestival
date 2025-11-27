@@ -1,8 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const feedbackForm = document.getElementById("feedbackForm");
+  const consoleDiv = document.getElementById("console");
+  const summaryDiv = document.getElementById("feedbackSummary");
 
+  // Submit form
   if (feedbackForm) {
-    feedbackForm.addEventListener("submit", async function (e) {
+    feedbackForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const name = document.getElementById("username").value.trim();
@@ -14,16 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const payload = { name, message, rating };
-
       try {
         const res = await fetch("../php/save_feedback.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({ name, message, rating }),
         });
 
         const data = await res.json();
+
+        if (consoleDiv) consoleDiv.innerText = JSON.stringify(data);
 
         if (data.success) {
           alert("บันทึกความคิดเห็นเรียบร้อยแล้ว!");
@@ -33,59 +36,46 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("เกิดข้อผิดพลาด: " + data.message);
         }
       } catch (err) {
-        alert("เกิดข้อผิดพลาด: " + err);
+        if (consoleDiv) consoleDiv.innerText = "Error: " + err;
       }
     });
   }
 
-  const summaryDiv = document.getElementById("feedbackSummary");
-  if (summaryDiv) loadFeedbackSummary();
+  // Load summary
+  if (summaryDiv) {
+    (async () => {
+      try {
+        const res = await fetch("../php/get_feedback.php");
+        const feedbacks = await res.json();
 
-  async function loadFeedbackSummary() {
-    try {
-      const res = await fetch("../php/get_feedback.php");
-      const feedbacks = await res.json();
+        if (!feedbacks || feedbacks.length === 0) {
+          summaryDiv.innerHTML = "<p>ยังไม่มีข้อมูล Feedback</p>";
+          return;
+        }
 
-      if (!feedbacks || feedbacks.length === 0) {
-        summaryDiv.innerHTML = "<p class='text-center'>ยังไม่มีข้อมูล Feedback</p>";
-        return;
-      }
+        const avg = feedbacks.reduce((sum, f) => sum + Number(f.rating), 0) / feedbacks.length;
 
-      const avg =
-        feedbacks.reduce((sum, f) => sum + Number(f.rating), 0) /
-        feedbacks.length;
+        let html = `<h5>Average Rating: ⭐ ${avg.toFixed(1)}</h5>
+          <table class="table table-striped">
+          <thead><tr>
+            <th>No.</th><th>Name</th><th>Message</th><th>Rating</th><th>Time</th>
+          </tr></thead><tbody>`;
 
-      let html = `
-        <h5 class="text-center mb-3">Average Rating: ⭐ ${avg.toFixed(1)}</h5>
-        <table class="table table-striped table-bordered">
-          <thead class="table-dark">
-            <tr>
-              <th>No.</th>
-              <th>Name</th>
-              <th>Message</th>
-              <th>Rating</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
-
-      feedbacks.forEach((f, i) => {
-        html += `
-          <tr>
+        feedbacks.forEach((f, i) => {
+          html += `<tr>
             <td>${i + 1}</td>
             <td>${f.name}</td>
             <td>${f.message}</td>
             <td>${"⭐".repeat(f.rating)}</td>
             <td>${f.time}</td>
-          </tr>
-        `;
-      });
+          </tr>`;
+        });
 
-      html += "</tbody></table>";
-      summaryDiv.innerHTML = html;
-    } catch (err) {
-      summaryDiv.innerHTML = "<p>โหลดข้อมูลไม่สำเร็จ</p>";
-    }
+        html += "</tbody></table>";
+        summaryDiv.innerHTML = html;
+      } catch (err) {
+        summaryDiv.innerHTML = "<p>โหลดข้อมูลไม่สำเร็จ</p>";
+      }
+    })();
   }
 });
