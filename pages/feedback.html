@@ -9,7 +9,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&family=Playfair+Display:wght@400;700;900&display=swap"
     rel="stylesheet">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -29,9 +28,8 @@
           </div>
 
           <div class="mb-3">
-            <label for="Feedback message" class="form-label">Feedback message (ไม่มีใส่ -)</label>
-            <textarea class="form-control" id="Feedback message" rows="4" placeholder="Write your feedback here..."
-              required></textarea>
+            <label for="feedbackMessage" class="form-label">Feedback message (ไม่มีใส่ -)</label>
+            <textarea class="form-control" id="feedbackMessage" rows="4" placeholder="Write your feedback here..." required></textarea>
           </div>
 
           <div class="mb-3">
@@ -48,6 +46,9 @@
 
           <button type="submit" class="btn btn-success">Submit Feedback</button>
         </form>
+
+        <!-- สำหรับ debug JS -->
+        <div id="console" class="mt-3 text-danger"></div>
       </div>
     </div>
 
