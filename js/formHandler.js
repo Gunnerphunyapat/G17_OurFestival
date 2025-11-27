@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    // ====== 1) Submit Form → ส่งไป save_registration.php ======
     const form = document.getElementById("registerForm");
 
     if (form) {
-        form.addEventListener("submit", function (e) {
+        form.addEventListener("submit", async function (e) {
             e.preventDefault();
 
             const name = document.getElementById("name").value.trim();
@@ -16,63 +18,88 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            const users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
-
-            users.push({
+            const payload = {
                 name,
                 surname,
                 gender: gender.value,
                 email,
-                phone,
-                time: new Date().toLocaleString()
-            });
+                phone
+            };
 
-            localStorage.setItem("registeredUsers", JSON.stringify(users));
+            try {
+                const res = await fetch("save_registration.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
 
+                const data = await res.json();
 
-            window.location.href = "register_summary.html";
+                if (data.success) {
+                    window.location.href = "register_summary.html";
+                } else {
+                    alert("บันทึกข้อมูลล้มเหลว: " + data.message);
+                }
+
+            } catch (err) {
+                alert("เกิดข้อผิดพลาด: " + err);
+            }
         });
     }
 
+    // ====== 2) Summary Page → โหลดข้อมูลจาก get_registration.php ======
     const summaryDiv = document.getElementById("summaryList");
-    if (summaryDiv) {
-        const users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
 
-        if (users.length === 0) {
-            summaryDiv.innerHTML = "<p>ยังไม่มีผู้ลงทะเบียน</p>";
-        } else {
+    if (summaryDiv) {
+        loadSummary();
+    }
+
+    async function loadSummary() {
+        try {
+            const res = await fetch("get_registration.php");
+            const users = await res.json();
+
+            if (!users || users.length === 0) {
+                summaryDiv.innerHTML = "<p>ยังไม่มีผู้ลงทะเบียน</p>";
+                return;
+            }
+
             let table = `
-        <table class="table table-striped table-bordered mt-4">
-          <thead class="table-dark">
-            <tr>
-              <th>No.</th>
-              <th>Name</th>
-              <th>Surname</th>
-              <th>Gender</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-      `;
+            <table class="table table-striped table-bordered mt-4">
+              <thead class="table-dark">
+                <tr>
+                  <th>No.</th>
+                  <th>Name</th>
+                  <th>Surname</th>
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+            `;
 
             users.forEach((u, i) => {
                 table += `
-          <tr>
-            <td>${i + 1}</td>
-            <td>${u.name}</td>
-            <td>${u.surname}</td>
-            <td>${u.gender}</td>
-            <td>${u.email}</td>
-            <td>${u.phone}</td>
-            <td>${u.time}</td>
-          </tr>
-        `;
+                <tr>
+                  <td>${i + 1}</td>
+                  <td>${u.name}</td>
+                  <td>${u.surname}</td>
+                  <td>${u.gender}</td>
+                  <td>${u.email}</td>
+                  <td>${u.phone}</td>
+                  <td>${u.time}</td>
+                </tr>`;
             });
 
             table += "</tbody></table>";
             summaryDiv.innerHTML = table;
+
+        } catch (err) {
+            summaryDiv.innerHTML = "<p>โหลดข้อมูลไม่สำเร็จ</p>";
         }
     }
 });

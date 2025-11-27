@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       const name = document.getElementById("username").value.trim();
-      const message = document.getElementById("Feedback message").value.trim();
+      const message = document.getElementById("feedbackMessage").value.trim();
       const rating = document.getElementById("rating").value;
 
 
