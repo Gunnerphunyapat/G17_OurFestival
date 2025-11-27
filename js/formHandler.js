@@ -18,20 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            const payload = {
-                name,
-                surname,
-                gender: gender.value,
-                email,
-                phone
-            };
+            const payload = { name, surname, gender: gender.value, email, phone };
 
             try {
-                const res = await fetch("save_registration.php", {
+                // <-- path updated
+                const res = await fetch("../php/save_registration.php", {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(payload)
                 });
 
@@ -58,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function loadSummary() {
         try {
-            const res = await fetch("get_registration.php");
+            // <-- path updated
+            const res = await fetch("../php/get_registration.php");
             const users = await res.json();
 
             if (!users || users.length === 0) {
